@@ -1,8 +1,9 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - FishController
+    - CollisionProfile
     - PlayerController
+    - SpawnManager
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Animation.Runtime.dll:
@@ -22,14 +23,14 @@ ScriptsOnlyBuild:
     Unity.AdaptivePerformance.Editor.dll:
     - UnityEditor.AdaptivePerformance.Editor.AdaptivePerformanceGeneralSettingsPerBuildTarget
     - UnityEditor.AdaptivePerformance.Editor.AdaptivePerformanceManagerSettingsEditor
+    Unity.AdaptivePerformance.Google.Android.Editor.dll:
+    - UnityEditor.AdaptivePerformance.Google.Android.Editor.GoogleAndroidProviderSettingsEditor
     Unity.AdaptivePerformance.Google.Android.dll:
     - UnityEngine.AdaptivePerformance.Google.Android.GoogleAndroidProviderLoader
     - UnityEngine.AdaptivePerformance.Google.Android.GoogleAndroidProviderSettings
-    Unity.AdaptivePerformance.Samsung.Android.dll:
-    - UnityEngine.AdaptivePerformance.Samsung.Android.SamsungAndroidProviderLoader
-    - UnityEngine.AdaptivePerformance.Samsung.Android.SamsungAndroidProviderSettings
     Unity.AdaptivePerformance.Simulator.Editor.dll:
     - UnityEditor.AdaptivePerformance.Simulator.Editor.SimulatorProviderSettings
+    - UnityEditor.AdaptivePerformance.Simulator.Editor.SimulatorProviderSettingsEditor
     Unity.AdaptivePerformance.dll:
     - UnityEngine.AdaptivePerformance.AdaptivePerformanceGeneralSettings
     - UnityEngine.AdaptivePerformance.AdaptivePerformanceManagerSettings
@@ -39,7 +40,6 @@ ScriptsOnlyBuild:
     - UnityEngine.InputSystem.InputSystemObject
     - UnityEngine.InputSystem.RemoteInputPlayerConnection
     Unity.Mobile.AndroidLogcat.Editor.dll:
-    - Unity.Android.Logcat.AndroidLogcatConsoleWindow
     - Unity.Android.Logcat.AndroidLogcatManager
     Unity.RenderPipelines.Core.Runtime:
     - UnityEngine.Rendering.UI.DebugUIHandlerBitField
@@ -110,8 +110,13 @@ ScriptsOnlyBuild:
     - Packages.Rider.Editor.RiderScriptEditorData
     - Packages.Rider.Editor.RiderScriptEditorPersistedState
     - Packages.Rider.Editor.UnitTesting.CallbackData
-    Unity.ShaderGraph.Editor.dll:
-    - UnityEditor.ShaderGraph.ShaderGraphProjectSettings
+    Unity.Splines.Editor.dll:
+    - UnityEditor.Splines.CreateSplineTool
+    - UnityEditor.Splines.SelectionContext
+    - UnityEditor.Splines.SplineAnimateEditor
+    Unity.Splines.dll:
+    - UnityEngine.Splines.SplineAnimate
+    - UnityEngine.Splines.SplineContainer
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.CommandLineTest.RunData
@@ -144,6 +149,10 @@ ScriptsOnlyBuild:
     - UnityEngine.InputSystem.InputBinding
     - UnityEngine.InputSystem.InputControlScheme
     - UnityEngine.InputSystem.InputControlScheme/DeviceRequirement
+    Unity.Mathematics:
+    - Unity.Mathematics.float3
+    - Unity.Mathematics.float4
+    - Unity.Mathematics.quaternion
     Unity.RenderPipelines.Core.Runtime:
     - UnityEngine.Rendering.APVLeakReductionModeParameter
     - UnityEngine.Rendering.BoolParameter
@@ -212,6 +221,12 @@ ScriptsOnlyBuild:
     - UnityEngine.Rendering.Universal.UniversalRenderPipelineRuntimeTextures
     - UnityEngine.Rendering.Universal.UniversalRenderPipelineRuntimeXRResources
     - UnityEngine.Rendering.Universal.UniversalRendererResources
+    Unity.Splines:
+    - UnityEngine.Splines.BezierKnot
+    - UnityEngine.Splines.KnotLinkCollection
+    - UnityEngine.Splines.Spline
+    - UnityEngine.Splines.Spline/MetaData
+    - UnityEngine.Splines.SplineDataDictionary`1
     UnityEngine.CoreModule:
     - UnityEngine.Bounds
     - UnityEngine.Events.ArgumentCache
@@ -237,24 +252,6 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerButton
     methodName: OnAction
   - assembly: Unity.RenderPipelines.Core.Runtime
-    fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerUIntField
-    methodName: OnDecrement
-  - assembly: Unity.RenderPipelines.Core.Runtime
-    fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerUIntField
-    methodName: OnIncrement
-  - assembly: Unity.RenderPipelines.Core.Runtime
-    fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerUIntField
-    methodName: OnIncrement
-  - assembly: Unity.RenderPipelines.Core.Runtime
-    fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerUIntField
-    methodName: OnDecrement
-  - assembly: Unity.RenderPipelines.Core.Runtime
-    fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerObjectPopupField
-    methodName: OnDecrement
-  - assembly: Unity.RenderPipelines.Core.Runtime
-    fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerObjectPopupField
-    methodName: OnIncrement
-  - assembly: Unity.RenderPipelines.Core.Runtime
     fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerPanel
     methodName: OnScrollbarClicked
   - assembly: Unity.RenderPipelines.Core.Runtime
@@ -271,6 +268,24 @@ ScriptsOnlyBuild:
     methodName: OnDecrement
   - assembly: Unity.RenderPipelines.Core.Runtime
     fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerIntField
+    methodName: OnIncrement
+  - assembly: Unity.RenderPipelines.Core.Runtime
+    fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerUIntField
+    methodName: OnDecrement
+  - assembly: Unity.RenderPipelines.Core.Runtime
+    fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerUIntField
+    methodName: OnIncrement
+  - assembly: Unity.RenderPipelines.Core.Runtime
+    fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerUIntField
+    methodName: OnIncrement
+  - assembly: Unity.RenderPipelines.Core.Runtime
+    fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerUIntField
+    methodName: OnDecrement
+  - assembly: Unity.RenderPipelines.Core.Runtime
+    fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerObjectPopupField
+    methodName: OnDecrement
+  - assembly: Unity.RenderPipelines.Core.Runtime
+    fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerObjectPopupField
     methodName: OnIncrement
   - assembly: Unity.RenderPipelines.Core.Runtime
     fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerPanel
@@ -291,112 +306,122 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 49
       Script: {instanceID: 0}
+    - Class: 50
+      Script: {instanceID: 0}
+    - Class: 61
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 32602}
+      Script: {instanceID: 33042}
     - Class: 114
-      Script: {instanceID: 32886}
+      Script: {instanceID: 33332}
     - Class: 114
-      Script: {instanceID: 33318}
+      Script: {instanceID: 33768}
     - Class: 114
-      Script: {instanceID: 33452}
+      Script: {instanceID: 33908}
     - Class: 114
-      Script: {instanceID: 33676}
+      Script: {instanceID: 34136}
     - Class: 114
-      Script: {instanceID: 33826}
+      Script: {instanceID: 34286}
     - Class: 114
-      Script: {instanceID: 34118}
+      Script: {instanceID: 34584}
     - Class: 114
-      Script: {instanceID: 34752}
+      Script: {instanceID: 34700}
     - Class: 114
-      Script: {instanceID: 34820}
+      Script: {instanceID: 35230}
     - Class: 114
-      Script: {instanceID: 34990}
+      Script: {instanceID: 35300}
     - Class: 114
-      Script: {instanceID: 35242}
+      Script: {instanceID: 35474}
     - Class: 114
-      Script: {instanceID: 35338}
+      Script: {instanceID: 35726}
     - Class: 114
-      Script: {instanceID: 35376}
+      Script: {instanceID: 35822}
     - Class: 114
-      Script: {instanceID: 35438}
+      Script: {instanceID: 35862}
     - Class: 114
-      Script: {instanceID: 35468}
+      Script: {instanceID: 35924}
     - Class: 114
-      Script: {instanceID: 35504}
+      Script: {instanceID: 35954}
     - Class: 114
-      Script: {instanceID: 36464}
+      Script: {instanceID: 35990}
     - Class: 114
-      Script: {instanceID: 36808}
+      Script: {instanceID: 36966}
     - Class: 114
-      Script: {instanceID: 37604}
+      Script: {instanceID: 37314}
     - Class: 114
-      Script: {instanceID: 37664}
+      Script: {instanceID: 38124}
     - Class: 114
-      Script: {instanceID: 37704}
+      Script: {instanceID: 38186}
     - Class: 114
-      Script: {instanceID: 37970}
+      Script: {instanceID: 38226}
     - Class: 114
-      Script: {instanceID: 38138}
+      Script: {instanceID: 38494}
     - Class: 114
-      Script: {instanceID: 38224}
+      Script: {instanceID: 38662}
     - Class: 114
-      Script: {instanceID: 38320}
+      Script: {instanceID: 38748}
     - Class: 114
-      Script: {instanceID: 38442}
+      Script: {instanceID: 38846}
     - Class: 114
-      Script: {instanceID: 39118}
+      Script: {instanceID: 38968}
     - Class: 114
-      Script: {instanceID: 39338}
+      Script: {instanceID: 39654}
     - Class: 114
-      Script: {instanceID: 39448}
+      Script: {instanceID: 39880}
     - Class: 114
-      Script: {instanceID: 39450}
+      Script: {instanceID: 39992}
     - Class: 114
-      Script: {instanceID: 39732}
+      Script: {instanceID: 39994}
     - Class: 114
-      Script: {instanceID: 40562}
+      Script: {instanceID: 40280}
     - Class: 114
-      Script: {instanceID: 41224}
+      Script: {instanceID: 41120}
     - Class: 114
-      Script: {instanceID: 42320}
+      Script: {instanceID: 41796}
     - Class: 114
-      Script: {instanceID: 42776}
+      Script: {instanceID: 42014}
     - Class: 114
-      Script: {instanceID: 42842}
+      Script: {instanceID: 42926}
     - Class: 114
-      Script: {instanceID: 43146}
+      Script: {instanceID: 43392}
     - Class: 114
-      Script: {instanceID: 43228}
+      Script: {instanceID: 43458}
     - Class: 114
-      Script: {instanceID: 43336}
+      Script: {instanceID: 43768}
     - Class: 114
-      Script: {instanceID: 43940}
+      Script: {instanceID: 43850}
     - Class: 114
-      Script: {instanceID: 44010}
+      Script: {instanceID: 43958}
     - Class: 114
-      Script: {instanceID: 44056}
+      Script: {instanceID: 44574}
     - Class: 114
-      Script: {instanceID: 44200}
+      Script: {instanceID: 44646}
     - Class: 114
-      Script: {instanceID: 44294}
+      Script: {instanceID: 44692}
     - Class: 114
-      Script: {instanceID: 44324}
+      Script: {instanceID: 44834}
     - Class: 114
-      Script: {instanceID: 44500}
+      Script: {instanceID: 44930}
     - Class: 114
-      Script: {instanceID: 44794}
+      Script: {instanceID: 44962}
     - Class: 114
-      Script: {instanceID: 45138}
+      Script: {instanceID: 45142}
     - Class: 114
-      Script: {instanceID: 45320}
+      Script: {instanceID: 45442}
     - Class: 114
-      Script: {instanceID: 66902}
+      Script: {instanceID: 45792}
     - Class: 114
-      Script: {instanceID: 67324}
+      Script: {instanceID: 45978}
+    - Class: 114
+      Script: {instanceID: 48700}
+    - Class: 114
+      Script: {instanceID: 48820}
+    - Class: 114
+      Script: {instanceID: 49530}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -752,6 +777,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.Tilemap.Extras
     namespaceName: UnityEngine
     className: IsometricRuleTile
+  - hash:
+      serializedVersion: 2
+      Hash: 180ab01d849a8af43014cf0bcbc09546
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: CollisionProfile
   - hash:
       serializedVersion: 2
       Hash: c4cdb902228df56d5b2b639d6a6bbd3c
@@ -1180,6 +1211,12 @@ ScriptsOnlyBuild:
     className: UnityOnTransformParentChangedMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 2d85df95d201d9924deeebfe3c280ca0
+    assemblyName: Unity.AdaptivePerformance.Google.Android
+    namespaceName: UnityEngine.AdaptivePerformance.Google.Android
+    className: GoogleAndroidProviderSettings
+  - hash:
+      serializedVersion: 2
       Hash: 6cf63e9dc888f92a3672d2e4db631c8e
     assemblyName: Unity.InputSystem
     namespaceName: UnityEngine.InputSystem.Editor
@@ -1534,6 +1571,12 @@ ScriptsOnlyBuild:
     className: SpriteShapeController
   - hash:
       serializedVersion: 2
+      Hash: 26b7910ed77507010863951badbe50a7
+    assemblyName: Unity.AdaptivePerformance.Google.Android
+    namespaceName: UnityEngine.AdaptivePerformance.Google.Android
+    className: GoogleAndroidProviderLoader
+  - hash:
+      serializedVersion: 2
       Hash: 1553f209ae0b2d5d3a35685fca55f9c3
     assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
@@ -1682,6 +1725,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.RenderPipelines.Universal.Runtime
     namespaceName: UnityEngine.Rendering.Universal
     className: LensDistortion
+  - hash:
+      serializedVersion: 2
+      Hash: f1fa4c52b6d9ac8a8379631ceef56e16
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PlayerController
   - hash:
       serializedVersion: 2
       Hash: 0b63f6d3335e11939ce8790b904c8691
@@ -2248,46 +2297,34 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: e78d8aaf13888c354a829b93a24949a7
+      Hash: ee989c3b1cc22890bc1a094097348594
+    assemblyName: Unity.Splines
+    namespaceName: UnityEngine.Splines
+    className: SplineContainer
+  - hash:
+      serializedVersion: 2
+      Hash: 95cec85248d20787021305cfe145ab16
+    assemblyName: Unity.Splines
+    namespaceName: UnityEngine.Splines
+    className: SplineInstantiate
+  - hash:
+      serializedVersion: 2
+      Hash: d7d424ed392cf89bdce865cf7461334f
+    assemblyName: Unity.Splines
+    namespaceName: UnityEngine.Splines
+    className: SplineAnimate
+  - hash:
+      serializedVersion: 2
+      Hash: 3a921d05d3dbc720e2fdad8ffdcfbfd7
+    assemblyName: Unity.Splines
+    namespaceName: UnityEngine.Splines
+    className: SplineExtrude
+  - hash:
+      serializedVersion: 2
+      Hash: 2afdfcb066a8c30319d5c193d1fb6b2f
     assemblyName: Assembly-CSharp
     namespaceName: 
-    className: PlayerController
-  - hash:
-      serializedVersion: 2
-      Hash: 49cfd382439f0d42b58d833efe594f9c
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: FishController
-  - hash:
-      serializedVersion: 2
-      Hash: 2d85df95d201d9924deeebfe3c280ca0
-    assemblyName: Unity.AdaptivePerformance.Google.Android
-    namespaceName: UnityEngine.AdaptivePerformance.Google.Android
-    className: GoogleAndroidProviderSettings
-  - hash:
-      serializedVersion: 2
-      Hash: 26b7910ed77507010863951badbe50a7
-    assemblyName: Unity.AdaptivePerformance.Google.Android
-    namespaceName: UnityEngine.AdaptivePerformance.Google.Android
-    className: GoogleAndroidProviderLoader
-  - hash:
-      serializedVersion: 2
-      Hash: 898f7f8619677236f6cfd37239d46686
-    assemblyName: Unity.AdaptivePerformance.Samsung.Android
-    namespaceName: UnityEngine.AdaptivePerformance.Samsung.Android
-    className: SamsungAndroidProviderLoader
-  - hash:
-      serializedVersion: 2
-      Hash: 18641a566280801760912b4a6f4514bc
-    assemblyName: Unity.AdaptivePerformance.Samsung.Android
-    namespaceName: UnityEngine.AdaptivePerformance
-    className: AdaptiveVariableRefreshRate
-  - hash:
-      serializedVersion: 2
-      Hash: 6b07670e56cf7978607879c842ef29a3
-    assemblyName: Unity.AdaptivePerformance.Samsung.Android
-    namespaceName: UnityEngine.AdaptivePerformance.Samsung.Android
-    className: SamsungAndroidProviderSettings
+    className: SpawnManager
   platform: 13
   scenePathNames:
   - Assets/Scenes/MainLevel.unity

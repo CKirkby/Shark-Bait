@@ -19,16 +19,6 @@
       "source": "registry",
       "testable": false
     },
-    "com.unity.adaptiveperformance.samsung.android@5.1.0": {
-      "name": "com.unity.adaptiveperformance.samsung.android",
-      "displayName": "Adaptive Performance Samsung Android",
-      "resolvedPath": "Z:\\Repository\\Unity\\Shark-Bait\\Shark Bait\\Library\\PackageCache\\com.unity.adaptiveperformance.samsung.android@d07c3e95be8a",
-      "fingerprint": "d07c3e95be8a842b93761fc68c5c6fc87527b759",
-      "editorCompatibility": "2022.3.0a1",
-      "version": "5.1.0",
-      "source": "registry",
-      "testable": false
-    },
     "com.unity.collab-proxy@2.9.2": {
       "name": "com.unity.collab-proxy",
       "displayName": "Unity Version Control",
@@ -105,6 +95,16 @@
       "editorCompatibility": "6000.2.0a1",
       "version": "17.2.0",
       "source": "builtin",
+      "testable": false
+    },
+    "com.unity.splines@2.8.1": {
+      "name": "com.unity.splines",
+      "displayName": "Splines",
+      "resolvedPath": "Z:\\Repository\\Unity\\Shark-Bait\\Shark Bait\\Library\\PackageCache\\com.unity.splines@b909627b5095",
+      "fingerprint": "b909627b5095061d48761597bbb8384d6f04e510",
+      "editorCompatibility": "2022.3.0a1",
+      "version": "2.8.1",
+      "source": "registry",
       "testable": false
     },
     "com.unity.timeline@1.8.9": {
@@ -409,6 +409,26 @@
       "source": "builtin",
       "testable": false
     },
+    "com.unity.mathematics@1.3.2": {
+      "name": "com.unity.mathematics",
+      "displayName": "Mathematics",
+      "resolvedPath": "Z:\\Repository\\Unity\\Shark-Bait\\Shark Bait\\Library\\PackageCache\\com.unity.mathematics@8017b507cc74",
+      "fingerprint": "8017b507cc74bf0a1dd14b18aa860569f807314d",
+      "editorCompatibility": "2021.3.0a1",
+      "version": "1.3.2",
+      "source": "registry",
+      "testable": false
+    },
+    "com.unity.settings-manager@2.1.0": {
+      "name": "com.unity.settings-manager",
+      "displayName": "Settings Manager",
+      "resolvedPath": "Z:\\Repository\\Unity\\Shark-Bait\\Shark Bait\\Library\\PackageCache\\com.unity.settings-manager@41738c275190",
+      "fingerprint": "41738c27519039c335849eb78949382f4d7a3544",
+      "editorCompatibility": "2022.3.0a1",
+      "version": "2.1.0",
+      "source": "registry",
+      "testable": false
+    },
     "com.unity.render-pipelines.core@17.2.0": {
       "name": "com.unity.render-pipelines.core",
       "displayName": "Scriptable Render Pipeline Core",
@@ -586,16 +606,6 @@
       "fingerprint": "f7a407abf4d5abf19ce630824dcde261e02ed97e",
       "editorCompatibility": "2021.3.0a1",
       "version": "1.8.24",
-      "source": "registry",
-      "testable": false
-    },
-    "com.unity.mathematics@1.3.2": {
-      "name": "com.unity.mathematics",
-      "displayName": "Mathematics",
-      "resolvedPath": "Z:\\Repository\\Unity\\Shark-Bait\\Shark Bait\\Library\\PackageCache\\com.unity.mathematics@8017b507cc74",
-      "fingerprint": "8017b507cc74bf0a1dd14b18aa860569f807314d",
-      "editorCompatibility": "2021.3.0a1",
-      "version": "1.3.2",
       "source": "registry",
       "testable": false
     },

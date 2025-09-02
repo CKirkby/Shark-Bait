@@ -1,9 +1,11 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TouchPhase = UnityEngine.TouchPhase;
 
 public class PlayerController : MonoBehaviour
 {
     public float MovementSpeed = 5;
+    public float TouchSpeedModifier = 0.01f;
     
     
     private InputAction MoveAction;
@@ -22,9 +24,19 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Temp jank movement code, needs sorting properly
-        Vector2 MoveValue = MoveAction.ReadValue<Vector2>();
-        transform.Translate(new Vector2(MoveValue.x, 0) * (MovementSpeed * Time.deltaTime), Space.World);
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+
+            // Convert finger screen position into world position
+            Vector3 touchWorldPos = MainCamera.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, MainCamera.nearClipPlane));
+
+            // Keep the player's Y/Z the same, only update X
+            Vector3 NewPos = transform.position; 
+            NewPos.x = Mathf.Lerp(transform.position.x, touchWorldPos.x, Time.deltaTime * 10f);
+
+            transform.position = NewPos;
+        }
     }
 
     private void LateUpdate()
