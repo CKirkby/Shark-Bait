@@ -1,21 +1,53 @@
+using System;
 using UnityEngine;
+
+public enum CollisionType
+{
+    Player, 
+    Catcher,
+}
 
 public class CollisionProfile : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] private CollisionType CollisionMode;
+    [SerializeField] private GameObject ObjectPoolPoint;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.name);
+        switch (CollisionMode)
+        {
+            case CollisionType.Player:
+                
+                // Do score stuff
+                SetFishInactive(collision.gameObject);
+                
+                break;
+            
+            case CollisionType.Catcher:
+                
+                SetFishInactive(collision.gameObject);
+                
+                break;
+            
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+    }
+
+    private void SetFishInactive(GameObject CollidedFish)
+    {
+        // Sets the missed fish inactive
+        CollidedFish.SetActive(false);
+
+        // Sets the position back to the object pool point
+        if (ObjectPoolPoint)
+        {
+            CollidedFish.transform.position = ObjectPoolPoint.transform.position;
+        }
+        else
+        {
+            // If for whatever reason the object pool point isn't active, sets it manually
+            CollidedFish.transform.position = new Vector2(0, 15);
+        }
     }
 }

@@ -7,7 +7,6 @@ ScriptsOnlyBuild:
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Animation.Runtime.dll:
-    - UnityEngine.U2D.Animation.BufferManager
     - UnityEngine.U2D.Animation.DeformationManager
     - UnityEngine.U2D.Animation.DeformationManagerUpdater
     Unity.2D.IK.Editor.dll:
@@ -22,7 +21,6 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.TilemapPrefabStageHelper
     Unity.AdaptivePerformance.Editor.dll:
     - UnityEditor.AdaptivePerformance.Editor.AdaptivePerformanceGeneralSettingsPerBuildTarget
-    - UnityEditor.AdaptivePerformance.Editor.AdaptivePerformanceManagerSettingsEditor
     Unity.AdaptivePerformance.Google.Android.Editor.dll:
     - UnityEditor.AdaptivePerformance.Google.Android.Editor.GoogleAndroidProviderSettingsEditor
     Unity.AdaptivePerformance.Google.Android.dll:
@@ -30,15 +28,16 @@ ScriptsOnlyBuild:
     - UnityEngine.AdaptivePerformance.Google.Android.GoogleAndroidProviderSettings
     Unity.AdaptivePerformance.Simulator.Editor.dll:
     - UnityEditor.AdaptivePerformance.Simulator.Editor.SimulatorProviderSettings
-    - UnityEditor.AdaptivePerformance.Simulator.Editor.SimulatorProviderSettingsEditor
     Unity.AdaptivePerformance.dll:
     - UnityEngine.AdaptivePerformance.AdaptivePerformanceGeneralSettings
     - UnityEngine.AdaptivePerformance.AdaptivePerformanceManagerSettings
     Unity.InputSystem.dll:
     - UnityEngine.InputSystem.InputActionAsset
+    - UnityEngine.InputSystem.InputActionReference
     - UnityEngine.InputSystem.InputSettings
     - UnityEngine.InputSystem.InputSystemObject
     - UnityEngine.InputSystem.RemoteInputPlayerConnection
+    - UnityEngine.InputSystem.UI.InputSystemUIInputModule
     Unity.Mobile.AndroidLogcat.Editor.dll:
     - Unity.Android.Logcat.AndroidLogcatManager
     Unity.RenderPipelines.Core.Runtime:
@@ -113,7 +112,6 @@ ScriptsOnlyBuild:
     Unity.Splines.Editor.dll:
     - UnityEditor.Splines.CreateSplineTool
     - UnityEditor.Splines.SelectionContext
-    - UnityEditor.Splines.SplineAnimateEditor
     Unity.Splines.dll:
     - UnityEngine.Splines.SplineAnimate
     - UnityEngine.Splines.SplineContainer
@@ -137,6 +135,10 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Text
     - UnityEngine.UI.Toggle
     - UnityEngine.UI.VerticalLayoutGroup
+    UnityEngine.UI.dll:
+    - UnityEngine.EventSystems.EventSystem
+    - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.GraphicRaycaster
   serializedClasses:
     Unity.AdaptivePerformance:
     - UnityEngine.AdaptivePerformance.AdaptivePerformanceIndexerSettings
@@ -310,118 +312,128 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 61
       Script: {instanceID: 0}
+    - Class: 70
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 33042}
+      Script: {instanceID: 33300}
     - Class: 114
-      Script: {instanceID: 33332}
+      Script: {instanceID: 33598}
     - Class: 114
-      Script: {instanceID: 33768}
+      Script: {instanceID: 33650}
     - Class: 114
-      Script: {instanceID: 33908}
+      Script: {instanceID: 34046}
     - Class: 114
-      Script: {instanceID: 34136}
+      Script: {instanceID: 34186}
     - Class: 114
-      Script: {instanceID: 34286}
+      Script: {instanceID: 34418}
     - Class: 114
-      Script: {instanceID: 34584}
+      Script: {instanceID: 34570}
     - Class: 114
-      Script: {instanceID: 34700}
+      Script: {instanceID: 34870}
     - Class: 114
-      Script: {instanceID: 35230}
+      Script: {instanceID: 34910}
     - Class: 114
-      Script: {instanceID: 35300}
+      Script: {instanceID: 34988}
     - Class: 114
-      Script: {instanceID: 35474}
+      Script: {instanceID: 35116}
     - Class: 114
-      Script: {instanceID: 35726}
+      Script: {instanceID: 35526}
     - Class: 114
-      Script: {instanceID: 35822}
+      Script: {instanceID: 35598}
     - Class: 114
-      Script: {instanceID: 35862}
+      Script: {instanceID: 35772}
     - Class: 114
-      Script: {instanceID: 35924}
+      Script: {instanceID: 36026}
     - Class: 114
-      Script: {instanceID: 35954}
+      Script: {instanceID: 36122}
     - Class: 114
-      Script: {instanceID: 35990}
+      Script: {instanceID: 36162}
     - Class: 114
-      Script: {instanceID: 36966}
+      Script: {instanceID: 36224}
     - Class: 114
-      Script: {instanceID: 37314}
+      Script: {instanceID: 36254}
     - Class: 114
-      Script: {instanceID: 38124}
+      Script: {instanceID: 36290}
     - Class: 114
-      Script: {instanceID: 38186}
+      Script: {instanceID: 37276}
     - Class: 114
-      Script: {instanceID: 38226}
+      Script: {instanceID: 37618}
     - Class: 114
-      Script: {instanceID: 38494}
+      Script: {instanceID: 37624}
     - Class: 114
-      Script: {instanceID: 38662}
+      Script: {instanceID: 38456}
     - Class: 114
-      Script: {instanceID: 38748}
+      Script: {instanceID: 38522}
     - Class: 114
-      Script: {instanceID: 38846}
+      Script: {instanceID: 38562}
     - Class: 114
-      Script: {instanceID: 38968}
+      Script: {instanceID: 38832}
     - Class: 114
-      Script: {instanceID: 39654}
+      Script: {instanceID: 39002}
     - Class: 114
-      Script: {instanceID: 39880}
+      Script: {instanceID: 39090}
     - Class: 114
-      Script: {instanceID: 39992}
+      Script: {instanceID: 39190}
     - Class: 114
-      Script: {instanceID: 39994}
+      Script: {instanceID: 39312}
     - Class: 114
-      Script: {instanceID: 40280}
+      Script: {instanceID: 40002}
     - Class: 114
-      Script: {instanceID: 41120}
+      Script: {instanceID: 40232}
     - Class: 114
-      Script: {instanceID: 41796}
+      Script: {instanceID: 40348}
     - Class: 114
-      Script: {instanceID: 42014}
+      Script: {instanceID: 40350}
     - Class: 114
-      Script: {instanceID: 42926}
+      Script: {instanceID: 40644}
     - Class: 114
-      Script: {instanceID: 43392}
+      Script: {instanceID: 41504}
     - Class: 114
-      Script: {instanceID: 43458}
+      Script: {instanceID: 42190}
     - Class: 114
-      Script: {instanceID: 43768}
+      Script: {instanceID: 42406}
     - Class: 114
-      Script: {instanceID: 43850}
+      Script: {instanceID: 43340}
     - Class: 114
-      Script: {instanceID: 43958}
+      Script: {instanceID: 43650}
     - Class: 114
-      Script: {instanceID: 44574}
+      Script: {instanceID: 43808}
     - Class: 114
-      Script: {instanceID: 44646}
+      Script: {instanceID: 43878}
     - Class: 114
-      Script: {instanceID: 44692}
+      Script: {instanceID: 44194}
     - Class: 114
-      Script: {instanceID: 44834}
+      Script: {instanceID: 44280}
     - Class: 114
-      Script: {instanceID: 44930}
+      Script: {instanceID: 44388}
     - Class: 114
-      Script: {instanceID: 44962}
+      Script: {instanceID: 45026}
     - Class: 114
-      Script: {instanceID: 45142}
+      Script: {instanceID: 45028}
     - Class: 114
-      Script: {instanceID: 45442}
+      Script: {instanceID: 45102}
     - Class: 114
-      Script: {instanceID: 45792}
+      Script: {instanceID: 45148}
     - Class: 114
-      Script: {instanceID: 45978}
+      Script: {instanceID: 45290}
     - Class: 114
-      Script: {instanceID: 48700}
+      Script: {instanceID: 45386}
     - Class: 114
-      Script: {instanceID: 48820}
+      Script: {instanceID: 45418}
     - Class: 114
-      Script: {instanceID: 49530}
+      Script: {instanceID: 45600}
+    - Class: 114
+      Script: {instanceID: 45910}
+    - Class: 114
+      Script: {instanceID: 46086}
+    - Class: 114
+      Script: {instanceID: 46272}
+    - Class: 114
+      Script: {instanceID: 46458}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -773,13 +785,19 @@ ScriptsOnlyBuild:
     className: ObsoleteProbeVolumeAsset
   - hash:
       serializedVersion: 2
+      Hash: b87817003c326eab067c24c7c86ed023
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: SpawnManager
+  - hash:
+      serializedVersion: 2
       Hash: b87547877f7bea0dd59c10bfb798b858
     assemblyName: Unity.2D.Tilemap.Extras
     namespaceName: UnityEngine
     className: IsometricRuleTile
   - hash:
       serializedVersion: 2
-      Hash: 180ab01d849a8af43014cf0bcbc09546
+      Hash: 1fc0f8a776eacf3b1e334f26f9a5cbdb
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: CollisionProfile
@@ -1607,16 +1625,16 @@ ScriptsOnlyBuild:
     className: DisallowGPUDrivenRendering
   - hash:
       serializedVersion: 2
-      Hash: 10ffd5579f941e0f4946756d18f1a9df
-    assemblyName: Unity.RenderPipelines.Core.Runtime
-    namespaceName: UnityEngine.Rendering.UI
-    className: DebugUIHandlerValueTuple
-  - hash:
-      serializedVersion: 2
       Hash: f34cc490b6857195b9cdb30787d4b96f
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UIElements
     className: WorldDocumentRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: 10ffd5579f941e0f4946756d18f1a9df
+    assemblyName: Unity.RenderPipelines.Core.Runtime
+    namespaceName: UnityEngine.Rendering.UI
+    className: DebugUIHandlerValueTuple
   - hash:
       serializedVersion: 2
       Hash: c78ed13f6b5a632d70d4f73f56ad81f2
@@ -1865,6 +1883,12 @@ ScriptsOnlyBuild:
     className: OnScreenButton
   - hash:
       serializedVersion: 2
+      Hash: ee989c3b1cc22890bc1a094097348594
+    assemblyName: Unity.Splines
+    namespaceName: UnityEngine.Splines
+    className: SplineContainer
+  - hash:
+      serializedVersion: 2
       Hash: bb8d968ef4474e71aaad4a4dce279f90
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -1947,6 +1971,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.RenderPipelines.Core.Runtime
     namespaceName: UnityEngine.Rendering.UI
     className: DebugUIHandlerPersistentCanvas
+  - hash:
+      serializedVersion: 2
+      Hash: 95cec85248d20787021305cfe145ab16
+    assemblyName: Unity.Splines
+    namespaceName: UnityEngine.Splines
+    className: SplineInstantiate
   - hash:
       serializedVersion: 2
       Hash: b5007673bbbdb9d12597a1d8201370f5
@@ -2201,6 +2231,12 @@ ScriptsOnlyBuild:
     className: AdaptivePerformanceGeneralSettings
   - hash:
       serializedVersion: 2
+      Hash: d7d424ed392cf89bdce865cf7461334f
+    assemblyName: Unity.Splines
+    namespaceName: UnityEngine.Splines
+    className: SplineAnimate
+  - hash:
+      serializedVersion: 2
       Hash: 6a0b5b415c00f783202fd1ae2d556cb2
     assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
@@ -2297,34 +2333,10 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: ee989c3b1cc22890bc1a094097348594
-    assemblyName: Unity.Splines
-    namespaceName: UnityEngine.Splines
-    className: SplineContainer
-  - hash:
-      serializedVersion: 2
-      Hash: 95cec85248d20787021305cfe145ab16
-    assemblyName: Unity.Splines
-    namespaceName: UnityEngine.Splines
-    className: SplineInstantiate
-  - hash:
-      serializedVersion: 2
-      Hash: d7d424ed392cf89bdce865cf7461334f
-    assemblyName: Unity.Splines
-    namespaceName: UnityEngine.Splines
-    className: SplineAnimate
-  - hash:
-      serializedVersion: 2
       Hash: 3a921d05d3dbc720e2fdad8ffdcfbfd7
     assemblyName: Unity.Splines
     namespaceName: UnityEngine.Splines
     className: SplineExtrude
-  - hash:
-      serializedVersion: 2
-      Hash: 2afdfcb066a8c30319d5c193d1fb6b2f
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: SpawnManager
   platform: 13
   scenePathNames:
   - Assets/Scenes/MainLevel.unity
