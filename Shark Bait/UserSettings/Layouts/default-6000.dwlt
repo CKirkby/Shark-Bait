@@ -301,8 +301,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Project Settings\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1791
-    y: 79
+    x: 1792
+    y: 24
     width: 768
     height: 1315
   m_SerializedDataModeController:
@@ -551,7 +551,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 79
+    y: 24
     width: 276
     height: 878
   m_SerializedDataModeController:
@@ -1186,7 +1186,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 983
+    y: 928
     width: 1790
     height: 411
   m_SerializedDataModeController:
@@ -1221,8 +1221,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Game\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 277
-    y: 79
+    x: 278
+    y: 24
     width: 1512
     height: 878
   m_SerializedDataModeController:
