@@ -203,4 +203,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FishConfiguration
   FishType: 2
-  FishValue: -10
+  FishValue: -5
