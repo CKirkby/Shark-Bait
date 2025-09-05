@@ -2,11 +2,15 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - CollisionProfile
+    - FishConfiguration
+    - HealthController
     - PlayerController
+    - ScoreManager
     - SpawnManager
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Animation.Runtime.dll:
+    - UnityEngine.U2D.Animation.BufferManager
     - UnityEngine.U2D.Animation.DeformationManager
     - UnityEngine.U2D.Animation.DeformationManagerUpdater
     Unity.2D.IK.Editor.dll:
@@ -21,11 +25,15 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.TilemapPrefabStageHelper
     Unity.AdaptivePerformance.Editor.dll:
     - UnityEditor.AdaptivePerformance.Editor.AdaptivePerformanceGeneralSettingsPerBuildTarget
+    - UnityEditor.AdaptivePerformance.Editor.AdaptivePerformanceManagerSettingsEditor
     Unity.AdaptivePerformance.Google.Android.Editor.dll:
     - UnityEditor.AdaptivePerformance.Google.Android.Editor.GoogleAndroidProviderSettingsEditor
     Unity.AdaptivePerformance.Google.Android.dll:
     - UnityEngine.AdaptivePerformance.Google.Android.GoogleAndroidProviderLoader
     - UnityEngine.AdaptivePerformance.Google.Android.GoogleAndroidProviderSettings
+    Unity.AdaptivePerformance.Samsung.Android.dll:
+    - UnityEngine.AdaptivePerformance.Samsung.Android.SamsungAndroidProviderLoader
+    - UnityEngine.AdaptivePerformance.Samsung.Android.SamsungAndroidProviderSettings
     Unity.AdaptivePerformance.Simulator.Editor.dll:
     - UnityEditor.AdaptivePerformance.Simulator.Editor.SimulatorProviderSettings
     Unity.AdaptivePerformance.dll:
@@ -115,6 +123,17 @@ ScriptsOnlyBuild:
     Unity.Splines.dll:
     - UnityEngine.Splines.SplineAnimate
     - UnityEngine.Splines.SplineContainer
+    Unity.TextMeshPro:
+    - TMPro.TMP_FontAsset
+    - TMPro.TMP_Settings
+    - TMPro.TMP_SpriteAsset
+    - TMPro.TMP_StyleSheet
+    Unity.TextMeshPro.dll:
+    - TMPro.TMP_FontAsset
+    - TMPro.TMP_Settings
+    - TMPro.TMP_SpriteAsset
+    - TMPro.TMP_StyleSheet
+    - TMPro.TextMeshProUGUI
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.CommandLineTest.RunData
@@ -139,6 +158,7 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.Image
   serializedClasses:
     Unity.AdaptivePerformance:
     - UnityEngine.AdaptivePerformance.AdaptivePerformanceIndexerSettings
@@ -229,6 +249,18 @@ ScriptsOnlyBuild:
     - UnityEngine.Splines.Spline
     - UnityEngine.Splines.Spline/MetaData
     - UnityEngine.Splines.SplineDataDictionary`1
+    Unity.TextMeshPro:
+    - TMPro.FaceInfo_Legacy
+    - TMPro.FontAssetCreationSettings
+    - TMPro.KerningTable
+    - TMPro.TMP_Character
+    - TMPro.TMP_FontFeatureTable
+    - TMPro.TMP_FontWeightPair
+    - TMPro.TMP_Sprite
+    - TMPro.TMP_SpriteCharacter
+    - TMPro.TMP_SpriteGlyph
+    - TMPro.TMP_Style
+    - TMPro.VertexGradient
     UnityEngine.CoreModule:
     - UnityEngine.Bounds
     - UnityEngine.Events.ArgumentCache
@@ -236,6 +268,14 @@ ScriptsOnlyBuild:
     - UnityEngine.Events.PersistentListenerMode
     - UnityEngine.RectOffset
     - UnityEngine.Rendering.RenderPipelineGraphicsSettingsCollection
+    UnityEngine.TextCoreFontEngineModule:
+    - UnityEngine.TextCore.FaceInfo
+    - UnityEngine.TextCore.Glyph
+    - UnityEngine.TextCore.GlyphMetrics
+    - UnityEngine.TextCore.GlyphRect
+    - UnityEngine.TextCore.LowLevel.GlyphAdjustmentRecord
+    - UnityEngine.TextCore.LowLevel.GlyphPairAdjustmentRecord
+    - UnityEngine.TextCore.LowLevel.GlyphValueRecord
     UnityEngine.UI:
     - UnityEngine.EventSystems.EventTrigger/Entry
     - UnityEngine.EventSystems.EventTrigger/TriggerEvent
@@ -319,121 +359,137 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 33300}
+      Script: {instanceID: 33146}
     - Class: 114
-      Script: {instanceID: 33598}
+      Script: {instanceID: 33338}
     - Class: 114
-      Script: {instanceID: 33650}
+      Script: {instanceID: 33636}
     - Class: 114
-      Script: {instanceID: 34046}
+      Script: {instanceID: 33688}
     - Class: 114
-      Script: {instanceID: 34186}
+      Script: {instanceID: 33918}
     - Class: 114
-      Script: {instanceID: 34418}
+      Script: {instanceID: 34084}
     - Class: 114
-      Script: {instanceID: 34570}
+      Script: {instanceID: 34224}
     - Class: 114
-      Script: {instanceID: 34870}
+      Script: {instanceID: 34456}
     - Class: 114
-      Script: {instanceID: 34910}
+      Script: {instanceID: 34608}
     - Class: 114
-      Script: {instanceID: 34988}
+      Script: {instanceID: 34908}
     - Class: 114
-      Script: {instanceID: 35116}
+      Script: {instanceID: 34948}
     - Class: 114
-      Script: {instanceID: 35526}
+      Script: {instanceID: 35026}
     - Class: 114
-      Script: {instanceID: 35598}
+      Script: {instanceID: 35154}
     - Class: 114
-      Script: {instanceID: 35772}
+      Script: {instanceID: 35564}
     - Class: 114
-      Script: {instanceID: 36026}
+      Script: {instanceID: 35636}
     - Class: 114
-      Script: {instanceID: 36122}
+      Script: {instanceID: 35810}
     - Class: 114
-      Script: {instanceID: 36162}
+      Script: {instanceID: 36064}
     - Class: 114
-      Script: {instanceID: 36224}
+      Script: {instanceID: 36160}
     - Class: 114
-      Script: {instanceID: 36254}
+      Script: {instanceID: 36200}
     - Class: 114
-      Script: {instanceID: 36290}
+      Script: {instanceID: 36262}
     - Class: 114
-      Script: {instanceID: 37276}
+      Script: {instanceID: 36292}
     - Class: 114
-      Script: {instanceID: 37618}
+      Script: {instanceID: 36328}
     - Class: 114
-      Script: {instanceID: 37624}
+      Script: {instanceID: 37314}
     - Class: 114
-      Script: {instanceID: 38456}
+      Script: {instanceID: 37656}
     - Class: 114
-      Script: {instanceID: 38522}
+      Script: {instanceID: 37662}
     - Class: 114
-      Script: {instanceID: 38562}
+      Script: {instanceID: 38494}
     - Class: 114
-      Script: {instanceID: 38832}
+      Script: {instanceID: 38560}
     - Class: 114
-      Script: {instanceID: 39002}
+      Script: {instanceID: 38600}
     - Class: 114
-      Script: {instanceID: 39090}
+      Script: {instanceID: 38870}
     - Class: 114
-      Script: {instanceID: 39190}
+      Script: {instanceID: 38968}
     - Class: 114
-      Script: {instanceID: 39312}
+      Script: {instanceID: 39040}
     - Class: 114
-      Script: {instanceID: 40002}
+      Script: {instanceID: 39130}
     - Class: 114
-      Script: {instanceID: 40232}
+      Script: {instanceID: 39230}
     - Class: 114
-      Script: {instanceID: 40348}
+      Script: {instanceID: 39352}
     - Class: 114
-      Script: {instanceID: 40350}
+      Script: {instanceID: 39544}
     - Class: 114
-      Script: {instanceID: 40644}
+      Script: {instanceID: 40044}
     - Class: 114
-      Script: {instanceID: 41504}
+      Script: {instanceID: 40274}
     - Class: 114
-      Script: {instanceID: 42190}
+      Script: {instanceID: 40390}
     - Class: 114
-      Script: {instanceID: 42406}
+      Script: {instanceID: 40392}
     - Class: 114
-      Script: {instanceID: 43340}
+      Script: {instanceID: 40686}
     - Class: 114
-      Script: {instanceID: 43650}
+      Script: {instanceID: 41546}
     - Class: 114
-      Script: {instanceID: 43808}
+      Script: {instanceID: 42232}
     - Class: 114
-      Script: {instanceID: 43878}
+      Script: {instanceID: 42448}
     - Class: 114
-      Script: {instanceID: 44194}
+      Script: {instanceID: 43382}
     - Class: 114
-      Script: {instanceID: 44280}
+      Script: {instanceID: 43692}
     - Class: 114
-      Script: {instanceID: 44388}
+      Script: {instanceID: 43850}
     - Class: 114
-      Script: {instanceID: 45026}
+      Script: {instanceID: 43920}
     - Class: 114
-      Script: {instanceID: 45028}
+      Script: {instanceID: 44236}
     - Class: 114
-      Script: {instanceID: 45102}
+      Script: {instanceID: 44322}
     - Class: 114
-      Script: {instanceID: 45148}
+      Script: {instanceID: 44430}
     - Class: 114
-      Script: {instanceID: 45290}
+      Script: {instanceID: 44958}
     - Class: 114
-      Script: {instanceID: 45386}
+      Script: {instanceID: 45068}
     - Class: 114
-      Script: {instanceID: 45418}
+      Script: {instanceID: 45070}
     - Class: 114
-      Script: {instanceID: 45600}
+      Script: {instanceID: 45144}
     - Class: 114
-      Script: {instanceID: 45910}
+      Script: {instanceID: 45190}
     - Class: 114
-      Script: {instanceID: 46086}
+      Script: {instanceID: 45332}
     - Class: 114
-      Script: {instanceID: 46272}
+      Script: {instanceID: 45428}
     - Class: 114
-      Script: {instanceID: 46458}
+      Script: {instanceID: 45460}
+    - Class: 114
+      Script: {instanceID: 45642}
+    - Class: 114
+      Script: {instanceID: 45952}
+    - Class: 114
+      Script: {instanceID: 46050}
+    - Class: 114
+      Script: {instanceID: 46128}
+    - Class: 114
+      Script: {instanceID: 46314}
+    - Class: 114
+      Script: {instanceID: 46500}
+    - Class: 114
+      Script: {instanceID: 49202}
+    - Class: 114
+      Script: {instanceID: 49326}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -797,7 +853,7 @@ ScriptsOnlyBuild:
     className: IsometricRuleTile
   - hash:
       serializedVersion: 2
-      Hash: 1fc0f8a776eacf3b1e334f26f9a5cbdb
+      Hash: c23ef8cd6c157b78dd1d79de5b9ebc69
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: CollisionProfile
@@ -1385,6 +1441,12 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerFloatField
   - hash:
       serializedVersion: 2
+      Hash: 14d937e225c315ae309c2dcd3e19f1f5
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ResolutionManager
+  - hash:
+      serializedVersion: 2
       Hash: a908b098f2284663c0b9130e88844772
     assemblyName: Unity.RenderPipelines.Core.Runtime
     namespaceName: UnityEngine.Rendering.UI
@@ -1431,6 +1493,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.RenderPipelines.Core.Runtime
     namespaceName: UnityEngine.Rendering
     className: VolumeComponent
+  - hash:
+      serializedVersion: 2
+      Hash: be7bf81ecfb493012d77013081ff52c3
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ScoreManager
   - hash:
       serializedVersion: 2
       Hash: 13f262cc0741566a7ab72682984bc3e1
@@ -1745,7 +1813,7 @@ ScriptsOnlyBuild:
     className: LensDistortion
   - hash:
       serializedVersion: 2
-      Hash: f1fa4c52b6d9ac8a8379631ceef56e16
+      Hash: 188fa1317c63ba87167f8cc4cdfa5877
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: PlayerController
@@ -2337,6 +2405,36 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Splines
     namespaceName: UnityEngine.Splines
     className: SplineExtrude
+  - hash:
+      serializedVersion: 2
+      Hash: c5eb04e9e469ad5479ace2dc89952407
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: HealthController
+  - hash:
+      serializedVersion: 2
+      Hash: 31480277955720b8800cfb43d231efee
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: FishConfiguration
+  - hash:
+      serializedVersion: 2
+      Hash: 898f7f8619677236f6cfd37239d46686
+    assemblyName: Unity.AdaptivePerformance.Samsung.Android
+    namespaceName: UnityEngine.AdaptivePerformance.Samsung.Android
+    className: SamsungAndroidProviderLoader
+  - hash:
+      serializedVersion: 2
+      Hash: 18641a566280801760912b4a6f4514bc
+    assemblyName: Unity.AdaptivePerformance.Samsung.Android
+    namespaceName: UnityEngine.AdaptivePerformance
+    className: AdaptiveVariableRefreshRate
+  - hash:
+      serializedVersion: 2
+      Hash: 6b07670e56cf7978607879c842ef29a3
+    assemblyName: Unity.AdaptivePerformance.Samsung.Android
+    namespaceName: UnityEngine.AdaptivePerformance.Samsung.Android
+    className: SamsungAndroidProviderSettings
   platform: 13
   scenePathNames:
   - Assets/Scenes/MainLevel.unity

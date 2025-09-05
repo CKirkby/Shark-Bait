@@ -19,6 +19,16 @@
       "source": "registry",
       "testable": false
     },
+    "com.unity.adaptiveperformance.samsung.android@5.1.0": {
+      "name": "com.unity.adaptiveperformance.samsung.android",
+      "displayName": "Adaptive Performance Samsung Android",
+      "resolvedPath": "Z:\\Repository\\Unity\\Shark-Bait\\Shark Bait\\Library\\PackageCache\\com.unity.adaptiveperformance.samsung.android@d07c3e95be8a",
+      "fingerprint": "d07c3e95be8a842b93761fc68c5c6fc87527b759",
+      "editorCompatibility": "2022.3.0a1",
+      "version": "5.1.0",
+      "source": "registry",
+      "testable": false
+    },
     "com.unity.collab-proxy@2.9.2": {
       "name": "com.unity.collab-proxy",
       "displayName": "Unity Version Control",

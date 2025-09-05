@@ -1,14 +1,14 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using TouchPhase = UnityEngine.TouchPhase;
 
 public class PlayerController : MonoBehaviour
 {
-    public float MovementSpeed = 5;
-    public float TouchSpeedModifier = 0.01f;
-    
-    
     private InputAction MoveAction;
+    
+    private Vector2 StartTouchPosition;
+    private Vector2 StartPlayerPosition;
+    private bool IsDragging = false;
+    
     private Camera MainCamera;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -24,7 +24,37 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.touchCount > 0)
+        if (Touchscreen.current != null && Touchscreen.current.primaryTouch.press.isPressed)
+        {
+            Vector2 CurrentTouchPos = Touchscreen.current.primaryTouch.position.ReadValue();
+            
+            if (!IsDragging)
+            {
+                IsDragging =  true;
+                StartTouchPosition = CurrentTouchPos;
+                StartPlayerPosition = transform.position;
+            }
+            else
+            {
+                float deltaX = CurrentTouchPos.x - StartTouchPosition.x;
+
+                // Sensitivity factor (tweak as needed)
+                float dragFactor = 0.01f;
+
+                // Calculate new X position
+                Vector2 newPos = StartPlayerPosition + new Vector2(deltaX * dragFactor, 0);
+
+                // Smoothly move player
+                transform.position = Vector2.Lerp(transform.position, newPos, Time.deltaTime * 10f);
+            }
+        }
+        else
+        {
+            IsDragging = false;
+        }
+        
+        
+        /*if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
 
@@ -36,7 +66,7 @@ public class PlayerController : MonoBehaviour
             NewPos.x = Mathf.Lerp(transform.position.x, touchWorldPos.x, Time.deltaTime * 10f);
 
             transform.position = NewPos;
-        }
+        }*/
     }
 
     private void LateUpdate()

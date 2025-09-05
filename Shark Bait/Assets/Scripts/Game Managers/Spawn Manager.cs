@@ -1,16 +1,8 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Splines;
 using Random = UnityEngine.Random;
-
-public enum FishType
-{
-    Small,
-    Big, 
-    Toxic
-}
 
 public class SpawnManager : MonoBehaviour
 {

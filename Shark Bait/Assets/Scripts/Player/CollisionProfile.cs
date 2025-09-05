@@ -9,8 +9,24 @@ public enum CollisionType
 
 public class CollisionProfile : MonoBehaviour
 {
+    [Header("Collision Settings")]
     [SerializeField] private CollisionType CollisionMode;
-    [SerializeField] private GameObject ObjectPoolPoint;
+
+    [Header("Game Manager Settings")]
+    [SerializeField] private GameObject GameManager;
+    private ScoreManager ScoreManager;
+    private GameObject ObjectPoolPoint;
+    
+    [Header("Health Settings")]
+    [SerializeField] private HealthController HealthController;
+    
+
+    private void Awake()
+    {
+        ScoreManager = GameManager.GetComponent<ScoreManager>();
+
+        ObjectPoolPoint = GameManager.transform.Find("ObjectPoolSpawnPoint").gameObject;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -20,6 +36,39 @@ public class CollisionProfile : MonoBehaviour
                 
                 // Do score stuff
                 SetFishInactive(collision.gameObject);
+
+                if (ScoreManager)
+                {
+                    FishConfiguration IncomingFishConfig = collision.GetComponent<FishConfiguration>();
+
+                    switch (IncomingFishConfig.GetFishType())
+                    {
+                        case FishType.Small:
+                            
+                            ScoreManager.AddScore(IncomingFishConfig.GetFishValue());
+                            
+                            break;
+                        case FishType.Big:
+                            
+                            ScoreManager.AddScore(IncomingFishConfig.GetFishValue());
+                            
+                            break;
+                        
+                        case FishType.Toxic:
+                            
+                            ScoreManager.AddScore(IncomingFishConfig.GetFishValue());
+
+                            if (HealthController)
+                            {
+                                HealthController.TakeDamage(1);
+                            }
+                            
+                            break;
+                        
+                        default:
+                            throw new ArgumentOutOfRangeException();
+                    }
+                }
                 
                 break;
             
