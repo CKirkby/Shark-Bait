@@ -2,6 +2,7 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - CollisionProfile
+    - FPSLimiter
     - FishConfiguration
     - HealthController
     - PlayerController
@@ -31,9 +32,6 @@ ScriptsOnlyBuild:
     Unity.AdaptivePerformance.Google.Android.dll:
     - UnityEngine.AdaptivePerformance.Google.Android.GoogleAndroidProviderLoader
     - UnityEngine.AdaptivePerformance.Google.Android.GoogleAndroidProviderSettings
-    Unity.AdaptivePerformance.Samsung.Android.dll:
-    - UnityEngine.AdaptivePerformance.Samsung.Android.SamsungAndroidProviderLoader
-    - UnityEngine.AdaptivePerformance.Samsung.Android.SamsungAndroidProviderSettings
     Unity.AdaptivePerformance.Simulator.Editor.dll:
     - UnityEditor.AdaptivePerformance.Simulator.Editor.SimulatorProviderSettings
     Unity.AdaptivePerformance.dll:
@@ -48,6 +46,8 @@ ScriptsOnlyBuild:
     - UnityEngine.InputSystem.UI.InputSystemUIInputModule
     Unity.Mobile.AndroidLogcat.Editor.dll:
     - Unity.Android.Logcat.AndroidLogcatManager
+    Unity.RenderPipelines.Core.Editor.dll:
+    - UnityEditor.Rendering.ProbeVolumesOptionsEditor
     Unity.RenderPipelines.Core.Runtime:
     - UnityEngine.Rendering.UI.DebugUIHandlerBitField
     - UnityEngine.Rendering.UI.DebugUIHandlerButton
@@ -89,7 +89,19 @@ ScriptsOnlyBuild:
     - UnityEngine.Rendering.Universal.Light2D
     - UnityEngine.Rendering.Universal.Renderer2DData
     Unity.RenderPipelines.Universal.Editor.dll:
+    - UnityEditor.Rendering.Universal.BloomEditor
+    - UnityEditor.Rendering.Universal.ChannelMixerEditor
+    - UnityEditor.Rendering.Universal.ColorCurvesEditor
+    - UnityEditor.Rendering.Universal.ColorLookupEditor
+    - UnityEditor.Rendering.Universal.DepthOfFieldEditor
+    - UnityEditor.Rendering.Universal.FilmGrainEditor
+    - UnityEditor.Rendering.Universal.LiftGammaGainEditor
+    - UnityEditor.Rendering.Universal.MotionBlurEditor
+    - UnityEditor.Rendering.Universal.ScreenSpaceLensFlareEditor
+    - UnityEditor.Rendering.Universal.ShadowsMidtonesHighlightsEditor
+    - UnityEditor.Rendering.Universal.TonemappingEditor
     - UnityEditor.Rendering.Universal.UniversalProjectSettings
+    - UnityEditor.Rendering.Universal.UniversalRenderPipelineVolumeComponentEditor
     Unity.RenderPipelines.Universal.Runtime.dll:
     - UnityEngine.Rendering.Universal.Bloom
     - UnityEngine.Rendering.Universal.ChannelMixer
@@ -134,6 +146,8 @@ ScriptsOnlyBuild:
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
     - TMPro.TextMeshProUGUI
+    Unity.Timeline.Editor.dll:
+    - TimelineProjectSettings
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.CommandLineTest.RunData
@@ -359,137 +373,139 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 33146}
+      Script: {instanceID: 33178}
     - Class: 114
-      Script: {instanceID: 33338}
+      Script: {instanceID: 33370}
     - Class: 114
-      Script: {instanceID: 33636}
+      Script: {instanceID: 33668}
     - Class: 114
-      Script: {instanceID: 33688}
+      Script: {instanceID: 33720}
     - Class: 114
-      Script: {instanceID: 33918}
+      Script: {instanceID: 33816}
     - Class: 114
-      Script: {instanceID: 34084}
+      Script: {instanceID: 33952}
     - Class: 114
-      Script: {instanceID: 34224}
+      Script: {instanceID: 34118}
     - Class: 114
-      Script: {instanceID: 34456}
+      Script: {instanceID: 34258}
     - Class: 114
-      Script: {instanceID: 34608}
+      Script: {instanceID: 34490}
     - Class: 114
-      Script: {instanceID: 34908}
+      Script: {instanceID: 34642}
     - Class: 114
-      Script: {instanceID: 34948}
+      Script: {instanceID: 34942}
     - Class: 114
-      Script: {instanceID: 35026}
+      Script: {instanceID: 34982}
     - Class: 114
-      Script: {instanceID: 35154}
+      Script: {instanceID: 35060}
     - Class: 114
-      Script: {instanceID: 35564}
+      Script: {instanceID: 35188}
     - Class: 114
-      Script: {instanceID: 35636}
+      Script: {instanceID: 35600}
     - Class: 114
-      Script: {instanceID: 35810}
+      Script: {instanceID: 35672}
     - Class: 114
-      Script: {instanceID: 36064}
+      Script: {instanceID: 35846}
     - Class: 114
-      Script: {instanceID: 36160}
+      Script: {instanceID: 36100}
     - Class: 114
-      Script: {instanceID: 36200}
+      Script: {instanceID: 36196}
     - Class: 114
-      Script: {instanceID: 36262}
+      Script: {instanceID: 36236}
     - Class: 114
-      Script: {instanceID: 36292}
+      Script: {instanceID: 36298}
     - Class: 114
       Script: {instanceID: 36328}
     - Class: 114
-      Script: {instanceID: 37314}
+      Script: {instanceID: 36364}
     - Class: 114
-      Script: {instanceID: 37656}
+      Script: {instanceID: 37352}
     - Class: 114
-      Script: {instanceID: 37662}
+      Script: {instanceID: 37694}
     - Class: 114
-      Script: {instanceID: 38494}
+      Script: {instanceID: 37700}
     - Class: 114
-      Script: {instanceID: 38560}
+      Script: {instanceID: 38532}
     - Class: 114
-      Script: {instanceID: 38600}
+      Script: {instanceID: 38598}
     - Class: 114
-      Script: {instanceID: 38870}
+      Script: {instanceID: 38638}
     - Class: 114
-      Script: {instanceID: 38968}
+      Script: {instanceID: 38908}
     - Class: 114
-      Script: {instanceID: 39040}
+      Script: {instanceID: 39006}
     - Class: 114
-      Script: {instanceID: 39130}
+      Script: {instanceID: 39078}
     - Class: 114
-      Script: {instanceID: 39230}
+      Script: {instanceID: 39168}
     - Class: 114
-      Script: {instanceID: 39352}
+      Script: {instanceID: 39268}
     - Class: 114
-      Script: {instanceID: 39544}
+      Script: {instanceID: 39390}
     - Class: 114
-      Script: {instanceID: 40044}
+      Script: {instanceID: 39584}
     - Class: 114
-      Script: {instanceID: 40274}
+      Script: {instanceID: 40088}
     - Class: 114
-      Script: {instanceID: 40390}
+      Script: {instanceID: 40318}
     - Class: 114
-      Script: {instanceID: 40392}
+      Script: {instanceID: 40434}
     - Class: 114
-      Script: {instanceID: 40686}
+      Script: {instanceID: 40436}
     - Class: 114
-      Script: {instanceID: 41546}
+      Script: {instanceID: 40732}
     - Class: 114
-      Script: {instanceID: 42232}
+      Script: {instanceID: 41592}
     - Class: 114
-      Script: {instanceID: 42448}
+      Script: {instanceID: 42278}
     - Class: 114
-      Script: {instanceID: 43382}
+      Script: {instanceID: 42498}
     - Class: 114
-      Script: {instanceID: 43692}
+      Script: {instanceID: 43436}
     - Class: 114
-      Script: {instanceID: 43850}
+      Script: {instanceID: 43746}
     - Class: 114
-      Script: {instanceID: 43920}
+      Script: {instanceID: 43904}
     - Class: 114
-      Script: {instanceID: 44236}
+      Script: {instanceID: 43974}
     - Class: 114
-      Script: {instanceID: 44322}
+      Script: {instanceID: 44290}
     - Class: 114
-      Script: {instanceID: 44430}
+      Script: {instanceID: 44310}
     - Class: 114
-      Script: {instanceID: 44958}
+      Script: {instanceID: 44378}
     - Class: 114
-      Script: {instanceID: 45068}
+      Script: {instanceID: 44486}
     - Class: 114
-      Script: {instanceID: 45070}
+      Script: {instanceID: 45014}
     - Class: 114
-      Script: {instanceID: 45144}
+      Script: {instanceID: 45124}
     - Class: 114
-      Script: {instanceID: 45190}
+      Script: {instanceID: 45126}
     - Class: 114
-      Script: {instanceID: 45332}
+      Script: {instanceID: 45200}
     - Class: 114
-      Script: {instanceID: 45428}
+      Script: {instanceID: 45246}
     - Class: 114
-      Script: {instanceID: 45460}
+      Script: {instanceID: 45388}
     - Class: 114
-      Script: {instanceID: 45642}
+      Script: {instanceID: 45484}
     - Class: 114
-      Script: {instanceID: 45952}
+      Script: {instanceID: 45516}
     - Class: 114
-      Script: {instanceID: 46050}
+      Script: {instanceID: 45698}
     - Class: 114
-      Script: {instanceID: 46128}
+      Script: {instanceID: 46008}
     - Class: 114
-      Script: {instanceID: 46314}
+      Script: {instanceID: 46108}
     - Class: 114
-      Script: {instanceID: 46500}
+      Script: {instanceID: 46186}
     - Class: 114
-      Script: {instanceID: 49202}
+      Script: {instanceID: 46372}
     - Class: 114
-      Script: {instanceID: 49326}
+      Script: {instanceID: 46560}
+    - Class: 114
+      Script: {instanceID: 49358}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -647,6 +663,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 31480277955720b8800cfb43d231efee
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: FishConfiguration
   - hash:
       serializedVersion: 2
       Hash: f99ce8526ec148f29051c0a9dced1a03
@@ -2041,6 +2063,12 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerPersistentCanvas
   - hash:
       serializedVersion: 2
+      Hash: c5eb04e9e469ad5479ace2dc89952407
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: HealthController
+  - hash:
+      serializedVersion: 2
       Hash: 95cec85248d20787021305cfe145ab16
     assemblyName: Unity.Splines
     namespaceName: UnityEngine.Splines
@@ -2407,34 +2435,10 @@ ScriptsOnlyBuild:
     className: SplineExtrude
   - hash:
       serializedVersion: 2
-      Hash: c5eb04e9e469ad5479ace2dc89952407
+      Hash: 6ba314f9b3dad870d7bc7c9d03146602
     assemblyName: Assembly-CSharp
     namespaceName: 
-    className: HealthController
-  - hash:
-      serializedVersion: 2
-      Hash: 31480277955720b8800cfb43d231efee
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: FishConfiguration
-  - hash:
-      serializedVersion: 2
-      Hash: 898f7f8619677236f6cfd37239d46686
-    assemblyName: Unity.AdaptivePerformance.Samsung.Android
-    namespaceName: UnityEngine.AdaptivePerformance.Samsung.Android
-    className: SamsungAndroidProviderLoader
-  - hash:
-      serializedVersion: 2
-      Hash: 18641a566280801760912b4a6f4514bc
-    assemblyName: Unity.AdaptivePerformance.Samsung.Android
-    namespaceName: UnityEngine.AdaptivePerformance
-    className: AdaptiveVariableRefreshRate
-  - hash:
-      serializedVersion: 2
-      Hash: 6b07670e56cf7978607879c842ef29a3
-    assemblyName: Unity.AdaptivePerformance.Samsung.Android
-    namespaceName: UnityEngine.AdaptivePerformance.Samsung.Android
-    className: SamsungAndroidProviderSettings
+    className: FPSLimiter
   platform: 13
   scenePathNames:
   - Assets/Scenes/MainLevel.unity

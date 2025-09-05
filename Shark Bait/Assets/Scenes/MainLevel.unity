@@ -993,6 +993,7 @@ GameObject:
   - component: {fileID: 1006581930}
   - component: {fileID: 1006581931}
   - component: {fileID: 1006581932}
+  - component: {fileID: 1006581933}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -1057,6 +1058,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
   ScoreUI: {fileID: 1249920503}
+--- !u!114 &1006581933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1006581929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c94411c60383e45bdf198f5913b478, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FPSLimiter
+  TargetFPS: 61
 --- !u!1 &1049645321
 GameObject:
   m_ObjectHideFlags: 0
