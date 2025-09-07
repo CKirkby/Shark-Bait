@@ -8,7 +8,7 @@ public class DifficultyController : MonoBehaviour
     [Tooltip("The max score to reach before the difficulty multipliers are capped")]
     [SerializeField] private float MaxScoreInterval = 100f;
     [SerializeField] private float SpeedMaxMultiplier = 3f;
-    [SerializeField] private float SpawnIntervalMaxMultiplier = 5f;
+    [SerializeField] private float SpawnIntervalMaxMultiplier = 4f;
     
     [SerializeField] private float[] LaneActivationGates;
 
