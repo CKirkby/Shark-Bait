@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638927061377568679
-    m_Hash: 724342897
+      ticks: 638928022730776431
+    m_Hash: 3424762330
   m_LockFileStatus:
     m_FilePath: Z:/Repository/Unity/Shark-Bait/Shark Bait/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638927061377594182
-    m_Hash: 3520755482
+      ticks: 638928022730798952
+    m_Hash: 3734342664
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -22,12 +22,12 @@ m_LocalPackages:
 m_ProjectPath: Z:/Repository/Unity/Shark-Bait/Shark Bait/Packages
 m_EditorVersion: 6000.2.1f1 (55300504c302)
 m_ResolvedPackages:
-- packageId: com.unity.adaptiveperformance.google.android@5.1.5
+- packageId: com.unity.adaptiveperformance.google.android@5.1.6
   testable: 0
   isDirectDependency: 1
-  version: 5.1.5
+  version: 5.1.6
   source: 1
-  resolvedPath: Z:\Repository\Unity\Shark-Bait\Shark Bait\Library\PackageCache\com.unity.adaptiveperformance.google.android@924592130169
+  resolvedPath: Z:\Repository\Unity\Shark-Bait\Shark Bait\Library\PackageCache\com.unity.adaptiveperformance.google.android@071a1152d939
   assetPath: Packages/com.unity.adaptiveperformance.google.android
   name: com.unity.adaptiveperformance.google.android
   displayName: Adaptive Performance Android
@@ -116,13 +116,13 @@ m_ResolvedPackages:
   entitlements:
     licensingModel: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 638888013183250000
+  datePublishedTicks: 638926834523000000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.adaptiveperformance.google.android@5.1/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.adaptiveperformance.google.android.git
-    revision: 4d28f005b1ed2b6267d22da117c20fd5c078aa44
+    revision: cb41e032be05a1b99c0ffc3d3d05580a57092d21
     path: 
   unityLifecycle:
     version: 5.1.5
@@ -136,11 +136,11 @@ m_ResolvedPackages:
   git:
     hash: 
     revision: 
-  upmReserved: '{"changelog":"### Changed\n* Early check for Frame Stats option to
-    avoid extra assets scanning on domain reload when Frame Stats are already on."}'
+  upmReserved: '{"changelog":"### Fixed\n* Fixed problem with native libraries manifests
+    when using this package with Unity 2022.3."}'
   assetStore:
     productId: 
-  fingerprint: 924592130169a823c4a539d3c57b5514872de927
+  fingerprint: 071a1152d939402bb92365549bca60e5da15f265
   editorCompatibility:
     compatibilityLevel: 0
     minimumPackageVersion: 5.1.5
@@ -151,12 +151,12 @@ m_ResolvedPackages:
       scopePatternExpression: 
       message: 
       readMoreLink: 
-- packageId: com.unity.collab-proxy@2.9.2
+- packageId: com.unity.collab-proxy@2.9.3
   testable: 0
   isDirectDependency: 1
-  version: 2.9.2
+  version: 2.9.3
   source: 1
-  resolvedPath: Z:\Repository\Unity\Shark-Bait\Shark Bait\Library\PackageCache\com.unity.collab-proxy@8f3c30ecd081
+  resolvedPath: Z:\Repository\Unity\Shark-Bait\Shark Bait\Library\PackageCache\com.unity.collab-proxy@ab839cc7d2ad
   assetPath: Packages/com.unity.collab-proxy
   name: com.unity.collab-proxy
   displayName: Unity Version Control
@@ -294,13 +294,13 @@ m_ResolvedPackages:
   entitlements:
     licensingModel: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 638914407139250000
+  datePublishedTicks: 638924048898490000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.collab-proxy@2.9/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.cloud.collaborate.git
-    revision: 7acc62018a7e47ef094f85b7df33841ac1322791
+    revision: d05e170be4282c71223767f286e93871356512a1
     path: 
   unityLifecycle:
     version: 2.8.2
@@ -314,10 +314,12 @@ m_ResolvedPackages:
   git:
     hash: 
     revision: 
-  upmReserved: '{"changelog":"### Fixed\n- Fixed obsolete references to TreeViewState"}'
+  upmReserved: '{"changelog":"### Fixed\n\n- Fixed the error that was thrown when
+    the \"Configure Unity Version Control\" button is pressed in the Build Automation
+    settings in Build Profiles"}'
   assetStore:
     productId: 
-  fingerprint: 8f3c30ecd081c36da7c76793dbf29df18a0d828a
+  fingerprint: ab839cc7d2adf143e5378baf46edc31cbc5d84f7
   editorCompatibility:
     compatibilityLevel: 0
     minimumPackageVersion: 2.8.2
@@ -1686,139 +1688,6 @@ m_ResolvedPackages:
     compatibilityLevel: 0
     minimumPackageVersion: 2.0.0
     minimumUnityVersion: 2019.2.0a1
-  compliance:
-    status: 0
-    violation:
-      scopePatternExpression: 
-      message: 
-      readMoreLink: 
-- packageId: com.unity.visualscripting@1.9.7
-  testable: 0
-  isDirectDependency: 1
-  version: 1.9.7
-  source: 1
-  resolvedPath: Z:\Repository\Unity\Shark-Bait\Shark Bait\Library\PackageCache\com.unity.visualscripting@6279e2b7c485
-  assetPath: Packages/com.unity.visualscripting
-  name: com.unity.visualscripting
-  displayName: Visual Scripting
-  author:
-    name: 
-    email: 
-    url: 
-  category: 
-  type: tool
-  description: 'Visual scripting is a workflow that uses visual, node-based graphs
-    to design behaviors rather than write lines of C# script.
-
-
-    Enabling artists,
-    designers and programmers alike, visual scripting can be used to design final
-    logic, quickly create prototypes, iterate on gameplay and create custom nodes
-    to help streamline collaboration.
-
-
-    Visual scripting is compatible with third-party
-    APIs, including most packages, assets and custom libraries.'
-  errors: []
-  versions:
-    all:
-    - 1.5.0
-    - 1.5.1-pre.3
-    - 1.5.1-pre.5
-    - 1.5.1
-    - 1.5.2
-    - 1.6.0-pre.3
-    - 1.6.0
-    - 1.6.1
-    - 1.7.1
-    - 1.7.2
-    - 1.7.3
-    - 1.7.5
-    - 1.7.6
-    - 1.7.7
-    - 1.7.8
-    - 1.8.0-pre.1
-    - 1.8.0
-    - 1.9.0
-    - 1.9.1
-    - 1.9.2
-    - 1.9.4
-    - 1.9.5
-    - 1.9.6
-    - 1.9.7
-    - 1.9.8
-    compatible:
-    - 1.9.7
-    - 1.9.8
-    recommended: 1.9.8
-    deprecated:
-    - 1.8.0-pre.1
-  dependencies:
-  - name: com.unity.ugui
-    version: 1.0.0
-  - name: com.unity.modules.jsonserialize
-    version: 1.0.0
-  resolvedDependencies:
-  - name: com.unity.ugui
-    version: 2.0.0
-  - name: com.unity.modules.ui
-    version: 1.0.0
-  - name: com.unity.modules.imgui
-    version: 1.0.0
-  - name: com.unity.modules.jsonserialize
-    version: 1.0.0
-  keywords: []
-  registry:
-    id: main
-    name: 
-    url: https://packages.unity.com
-    scopes: []
-    isDefault: 1
-    capabilities: 7
-    configSource: 0
-    compliance:
-      status: 0
-      violations: []
-  hideInEditor: 1
-  entitlements:
-    licensingModel: 1
-  isAssetStorePackage: 0
-  datePublishedTicks: 638835226812630000
-  documentationUrl: 
-  hasRepository: 1
-  repository:
-    type: git
-    url: https://github.cds.internal.unity3d.com/unity/com.unity.visualscripting.git
-    revision: 8292335505915a41ec7c5cc8e08ac436e24120a9
-    path: 
-  unityLifecycle:
-    version: 1.9.7
-    nextVersion: 
-    recommendedVersion: 
-    isDeprecated: 0
-    deprecationMessage: 
-    isDiscoverable: 1
-  isDeprecated: 0
-  deprecationMessage: 
-  git:
-    hash: 
-    revision: 
-  upmReserved: '{"changelog":"### Fixed\n- Fixed a warning \"Unable to load Unity.Android.Gradle''s
-    referenced assembly NiceIO\" when scanning assemblies. [UVSB-2594](https://issuetracker.unity3d.com/product/unity/issues/guid/UVSB-2594)\n-
-    Fixed error when trying to load fuzzy finder on multi screen setup on Mac. [UVSB-2419](https://issuetracker.unity3d.com/product/unity/issues/guid/UVSB-2419)\n-
-    Fixed the `AOTSafeMode` project setting appearing in the Editor Preferences window.
-    It is now shown in the Project Settings tab for Visual Scripting. [UVSB-2590](https://issuetracker.unity3d.com/product/unity/issues/guid/UVSB-2590)\n-
-    Fixed possible crash on VisionOS. [UVSB-2565](https://issuetracker.unity3d.com/product/unity/issues/guid/UVSB-2565)\n\n###
-    Changed\n- The `AOTSafeMode` project setting has been marked as not visible,
-    it will no longer be included when calling `ConfigurationPanel.GetSearchKeywords`.
-    [UVSB-2590](https://issuetracker.unity3d.com/product/unity/issues/guid/UVSB-2590)"}'
-  assetStore:
-    productId: 
-  fingerprint: 6279e2b7c4858e56cca7f367cd38c49ef66778c9
-  editorCompatibility:
-    compatibilityLevel: 0
-    minimumPackageVersion: 1.9.7
-    minimumUnityVersion: 2021.3.0a1
   compliance:
     status: 0
     violation:

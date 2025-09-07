@@ -1,7 +1,5 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Splines;
 using Random = UnityEngine.Random;
@@ -218,11 +216,12 @@ public class SpawnManager : MonoBehaviour
         float RandomWait = ActiveLanes switch
         {
             2 => Random.Range(0.1f, 0.5f),
-            3 => 0.5f,
+            3 => Random.Range(0.35f, 0.7f),
             _ => 0.25f
         };
 
         yield return new WaitForSeconds(RandomWait);
+        
         
         GetFishAndUpdateSplines(Lane);
     }

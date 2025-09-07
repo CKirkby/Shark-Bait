@@ -9,23 +9,23 @@
     "Z:\\Unity\\6000.2.1f1\\Editor\\Data\\Resources\\PackageManager\\BuiltInPackages\\BuiltInPackagesCombined.sha1"
   ],
   "outputs": {
-    "com.unity.adaptiveperformance.google.android@5.1.5": {
+    "com.unity.adaptiveperformance.google.android@5.1.6": {
       "name": "com.unity.adaptiveperformance.google.android",
       "displayName": "Adaptive Performance Android",
-      "resolvedPath": "Z:\\Repository\\Unity\\Shark-Bait\\Shark Bait\\Library\\PackageCache\\com.unity.adaptiveperformance.google.android@924592130169",
-      "fingerprint": "924592130169a823c4a539d3c57b5514872de927",
+      "resolvedPath": "Z:\\Repository\\Unity\\Shark-Bait\\Shark Bait\\Library\\PackageCache\\com.unity.adaptiveperformance.google.android@071a1152d939",
+      "fingerprint": "071a1152d939402bb92365549bca60e5da15f265",
       "editorCompatibility": "2022.3.0a1",
-      "version": "5.1.5",
+      "version": "5.1.6",
       "source": "registry",
       "testable": false
     },
-    "com.unity.collab-proxy@2.9.2": {
+    "com.unity.collab-proxy@2.9.3": {
       "name": "com.unity.collab-proxy",
       "displayName": "Unity Version Control",
-      "resolvedPath": "Z:\\Repository\\Unity\\Shark-Bait\\Shark Bait\\Library\\PackageCache\\com.unity.collab-proxy@8f3c30ecd081",
-      "fingerprint": "8f3c30ecd081c36da7c76793dbf29df18a0d828a",
+      "resolvedPath": "Z:\\Repository\\Unity\\Shark-Bait\\Shark Bait\\Library\\PackageCache\\com.unity.collab-proxy@ab839cc7d2ad",
+      "fingerprint": "ab839cc7d2adf143e5378baf46edc31cbc5d84f7",
       "editorCompatibility": "2021.3.0f1",
-      "version": "2.9.2",
+      "version": "2.9.3",
       "source": "registry",
       "testable": false
     },
@@ -135,16 +135,6 @@
       "editorCompatibility": "2019.2.0a1",
       "version": "2.0.0",
       "source": "builtin",
-      "testable": false
-    },
-    "com.unity.visualscripting@1.9.7": {
-      "name": "com.unity.visualscripting",
-      "displayName": "Visual Scripting",
-      "resolvedPath": "Z:\\Repository\\Unity\\Shark-Bait\\Shark Bait\\Library\\PackageCache\\com.unity.visualscripting@6279e2b7c485",
-      "fingerprint": "6279e2b7c4858e56cca7f367cd38c49ef66778c9",
-      "editorCompatibility": "2021.3.0a1",
-      "version": "1.9.7",
-      "source": "registry",
       "testable": false
     },
     "com.unity.modules.accessibility@1.0.0": {

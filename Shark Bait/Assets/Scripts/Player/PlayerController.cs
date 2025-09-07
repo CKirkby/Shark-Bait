@@ -3,11 +3,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    private InputAction MoveAction;
-    
     private Vector2 StartTouchPosition;
     private Vector2 StartPlayerPosition;
-    private bool IsDragging = false;
+    private bool IsDragging;
     
     private Camera MainCamera;
     
@@ -16,9 +14,6 @@ public class PlayerController : MonoBehaviour
     {
         // Gets the camera 
         MainCamera = Camera.main;
-        
-        // Finds the relevant input actions
-        MoveAction = InputSystem.actions.FindAction("Move");
     }
 
     // Update is called once per frame

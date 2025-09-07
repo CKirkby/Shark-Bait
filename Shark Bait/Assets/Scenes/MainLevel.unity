@@ -428,66 +428,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1006581930}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &250197022
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 250197025}
-  - component: {fileID: 250197024}
-  - component: {fileID: 250197023}
-  m_Layer: 0
-  m_Name: VisualScripting SceneVariables
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &250197023
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 250197022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 765181c9ef4b24d32a4f7cbd2ef370dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.VisualScripting.Core::Unity.VisualScripting.SceneVariables
---- !u!114 &250197024
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 250197022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.VisualScripting.Core::Unity.VisualScripting.Variables
-  _data:
-    _json: '{"declarations":{"Kind":"Scene","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
-    _objectReferences: []
---- !u!4 &250197025
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 250197022}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &371754302
 GameObject:
   m_ObjectHideFlags: 0
@@ -1099,8 +1039,9 @@ MonoBehaviour:
   - {fileID: 1158648220}
   - {fileID: 617262247}
   - {fileID: 870989132}
+  BaseSpeed: 5
   SpawnInterval: 2
-  ChanceToSpawnSmallFish: 0.5
+  ChanceToSpawnSmallFish: 0.65
   ChanceToSpawnToxicFish: 0.8
   ObjectPoolSpawnPoint: {fileID: 82878021}
   SmallFishPoolSize: 10
@@ -1119,7 +1060,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
   ScoreUI: {fileID: 1249920503}
-  DifficultyController: {fileID: 0}
+  DifficultyController: {fileID: 1006581934}
 --- !u!114 &1006581933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1146,30 +1087,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DifficultyController
   SpawnManager: {fileID: 1006581931}
-  ScoreCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0.02
-      outSlope: 0.02
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 100
-      value: 2
-      inSlope: 0.02
-      outSlope: 0.02
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  MaxScoreInterval: 200
+  SpeedMaxMultiplier: 5
+  SpawnIntervalMaxMultiplier: 2
+  LaneActivationGates:
+  - 0.5
+  - 1
 --- !u!1 &1049645321
 GameObject:
   m_ObjectHideFlags: 0
@@ -2382,4 +2305,3 @@ SceneRoots:
   - {fileID: 2145622920}
   - {fileID: 1953952575}
   - {fileID: 1731515874}
-  - {fileID: 250197025}
