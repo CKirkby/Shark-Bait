@@ -11,8 +11,9 @@ public class SpawnManager : MonoBehaviour
     public GameObject BigFishSpawnClass;
     public GameObject ToxicFishSpawnClass;
 
-    [Header("Spline Lanes")] 
+    [Header("Spline Settings")] 
     public SplineContainer[] Lanes;
+    public float BaseSpeed = 5.0f;
 
     [Header("Spawn Settings")] 
     public float SpawnInterval;
@@ -25,6 +26,13 @@ public class SpawnManager : MonoBehaviour
     public int BigFishPoolSize = 5;
     public int ToxicFishPoolSize = 10;
     
+    [Header("Multiplier Settings")]
+    private float SpawnIntervalMultiplier = 1.0f;
+    private float FishSpeedMultiplier = 1.0f;
+    private float CachedModifiedSpeed;
+    private float CachedUpdatedSpawnInterval;
+    private int ActiveLanes = 1;
+    
     private readonly List<KeyValuePair<GameObject, FishType>> SpawnedFishes = new();
     private readonly Dictionary<GameObject, SplineAnimate> FishAnimations = new();
 
@@ -32,6 +40,9 @@ public class SpawnManager : MonoBehaviour
     {
         SpawnObjectPools();
         StartCoroutine(ActivateEntity());
+
+        CachedModifiedSpeed = BaseSpeed;
+        CachedUpdatedSpawnInterval = SpawnInterval;
     }
 
     private IEnumerator ActivateEntity()
@@ -39,27 +50,57 @@ public class SpawnManager : MonoBehaviour
         while (true)
         {
             if (Lanes.Length == 0) yield break;
+        
+            yield return new WaitForSeconds(CachedUpdatedSpawnInterval);
             
-            // Gets a random spline game object
-            SplineContainer LaneToUse = Lanes[Random.Range(0, Lanes.Length)];
-        
-            yield return new WaitForSeconds(SpawnInterval);
-        
-            // Spawns the fish at the start of the chosen spline
-            // NEED TO DO CHANCE SYSTEM HERE
-            GameObject GotFish = ChooseFishToActivate();
-            if (!GotFish) yield break;
-            GotFish.SetActive(true);
-        
-            // Gets the anim component for the spline from the fish
-            SplineAnimate SplineAnim = GetSplineAnimation(GotFish);
-            if (!SplineAnim) yield break;
+            if (ActiveLanes > 1)
+            {
+                // Uses more than one lane at once spawning more than one fish at once
+                List<SplineContainer> ShuffledLanes = new List<SplineContainer>(Lanes);
 
-            // Sets the anims spline to be the chosen lane and plays it.
-            SplineAnim.Container = LaneToUse;
-            SplineAnim.Restart(true);
-            SplineAnim.Play();   
+                for (var i = 0; i < ShuffledLanes.Count; i++)
+                {
+                    // Shuffles the list
+                    int randomIndex = Random.Range(i, ShuffledLanes.Count);
+                    (ShuffledLanes[i], ShuffledLanes[randomIndex]) = (ShuffledLanes[randomIndex], ShuffledLanes[i]);
+                }
+
+                int NumberOfLanesToUse = Mathf.Min(ActiveLanes, ShuffledLanes.Count);
+                List<SplineContainer> LanesToUse = ShuffledLanes.GetRange(0, NumberOfLanesToUse);
+
+                foreach (var Lane in LanesToUse)
+                {
+                    StartCoroutine(MultiLaneActivation(Lane));
+                }
+            }
+            else
+            {
+                
+                // Gets a single spline game object
+                SplineContainer LaneToUse = Lanes[Random.Range(0, Lanes.Length)];
+
+                GetFishAndUpdateSplines(LaneToUse);
+            }
         }
+    }
+
+    private void GetFishAndUpdateSplines(SplineContainer Lane)
+    {
+        // Spawns the fish at the start of the chosen spline
+        GameObject GotFish = ChooseFishToActivate();
+        
+        // Gets the anim component for the spline from the fish
+        SplineAnimate SplineAnim = GetSplineAnimation(GotFish);
+        
+        GotFish.SetActive(true);
+        
+        // Sets the new speed of the fish when its in use, should be equal across all fish
+        SplineAnim.MaxSpeed = CachedModifiedSpeed;
+
+        // Sets the anims spline to be the chosen lane and plays it.
+        SplineAnim.Container = Lane;
+        SplineAnim.Restart(true);
+        SplineAnim.Play();   
     }
 
     private void SpawnObjectPools()
@@ -126,16 +167,65 @@ public class SpawnManager : MonoBehaviour
         // Random Num between 0 and 1 to act as chance value
         float RandomValue = Random.value;
         
-        // 50% Chance
+        // Small Fish Chance
         if (RandomValue < ChanceToSpawnSmallFish)
             return GetPooledFish(FishType.Small);
         
-        // 30% Chance
+        // Toxic Fish Chance
         if (RandomValue < ChanceToSpawnToxicFish)
             return GetPooledFish(FishType.Toxic);
         
-        // remaining 20%
+        // Big Fish Chance
             return GetPooledFish(FishType.Big);
 
     }
+
+    public void SetSpeedMultiplier(float speedMultiplier)
+    {
+        FishSpeedMultiplier = speedMultiplier;
+        
+        // Sets the default speed so that the fish can be updated on use
+        CachedModifiedSpeed = BaseSpeed * FishSpeedMultiplier;
+    }
+
+    public float GetSpeedMultiplier()
+    {
+        return FishSpeedMultiplier;
+    }
+
+    public void SetSpawnIntervalMultiplier(float spawnIntervalMultiplier)
+    {
+        SpawnIntervalMultiplier = spawnIntervalMultiplier;
+        
+        CachedUpdatedSpawnInterval = SpawnInterval / SpawnIntervalMultiplier;
+        
+        Debug.Log("New Spawn Multiplier is: " +  CachedUpdatedSpawnInterval);
+    }
+
+    public void SetActiveLanes(int activeLanes)
+    {
+        ActiveLanes = activeLanes;
+    }
+
+    public float GetSpawnIntervalMultiplier()
+    {
+        return SpawnIntervalMultiplier;
+    }
+
+    private IEnumerator MultiLaneActivation(SplineContainer Lane)
+    {
+        // Depending on the number of active lanes, it increases or decreases the range value because it might overlap
+        float RandomWait = ActiveLanes switch
+        {
+            2 => Random.Range(0.1f, 0.5f),
+            3 => Random.Range(0.35f, 0.7f),
+            _ => 0.25f
+        };
+
+        yield return new WaitForSeconds(RandomWait);
+        
+        
+        GetFishAndUpdateSplines(Lane);
+    }
+    
 }
