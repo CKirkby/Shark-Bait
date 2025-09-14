@@ -12,8 +12,8 @@ public class DifficultyController : MonoBehaviour
     
     [SerializeField] private float[] LaneActivationGates;
 
-    private bool TierOneLaneActived;
-    private bool TierTwoLaneActived;
+    private bool TierOneLaneActivated;
+    private bool TierTwoLaneActivated;
     private bool MaxLaneTiersReached;
     
     public void UpdateDifficulty(int CurrentScore)
@@ -45,17 +45,17 @@ public class DifficultyController : MonoBehaviour
         if (LaneActivationGates.Length == 0) return;
         
         // Checks the current progress alpha against the tier float gate
-        if (CurrentProgress >= LaneActivationGates[0] && !TierOneLaneActived)
+        if (CurrentProgress >= LaneActivationGates[0] && !TierOneLaneActivated)
         {
             // sets two lanes to be active
             SpawnManager.SetActiveLanes(2);
-            TierOneLaneActived = true;
+            TierOneLaneActivated = true;
         }
-        else if (CurrentProgress >= LaneActivationGates[1] && !TierTwoLaneActived)
+        else if (CurrentProgress >= LaneActivationGates[1] && !TierTwoLaneActivated)
         {
             // Sets three lanes to be active and maxes out here
             SpawnManager.SetActiveLanes(3);
-            TierTwoLaneActived = true;
+            TierTwoLaneActivated = true;
             
             MaxLaneTiersReached = true;
         }

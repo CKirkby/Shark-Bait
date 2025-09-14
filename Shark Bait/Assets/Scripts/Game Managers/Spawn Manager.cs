@@ -55,7 +55,7 @@ public class SpawnManager : MonoBehaviour
             
             if (ActiveLanes > 1)
             {
-                // Uses more then one lanes at once spawning more then one fish at once
+                // Uses more than one lane at once spawning more than one fish at once
                 List<SplineContainer> ShuffledLanes = new List<SplineContainer>(Lanes);
 
                 for (var i = 0; i < ShuffledLanes.Count; i++)
@@ -198,6 +198,8 @@ public class SpawnManager : MonoBehaviour
         SpawnIntervalMultiplier = spawnIntervalMultiplier;
         
         CachedUpdatedSpawnInterval = SpawnInterval / SpawnIntervalMultiplier;
+        
+        Debug.Log("New Spawn Multiplier is: " +  CachedUpdatedSpawnInterval);
     }
 
     public void SetActiveLanes(int activeLanes)

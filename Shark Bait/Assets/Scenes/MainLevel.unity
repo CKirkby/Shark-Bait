@@ -1007,8 +1007,8 @@ MonoBehaviour:
   SpeedMaxMultiplier: 3
   SpawnIntervalMaxMultiplier: 4
   LaneActivationGates:
-  - 0.5
-  - 1
+  - 2
+  - 2
 --- !u!1 &1049645321
 GameObject:
   m_ObjectHideFlags: 0
