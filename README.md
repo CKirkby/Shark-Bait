@@ -50,6 +50,11 @@ to increase difficulty.
    <img src="https://github.com/user-attachments/assets/e169f5af-223c-499a-9df7-508cbb07e2d1" width="250" height="500">
    </p>
 
+  ## Notable Code:
+  * [Spawning Manager](https://github.com/CKirkby/Shark-Bait/blob/main/Shark%20Bait/Assets/Scripts/Game%20Managers/Spawn%20Manager.cs)
+  * [Difficulty Manager](https://github.com/CKirkby/Shark-Bait/blob/main/Shark%20Bait/Assets/Scripts/Game%20Managers/Difficulty%20Controller.cs)
+  * [Player Controller](https://github.com/CKirkby/Shark-Bait/blob/main/Shark%20Bait/Assets/Scripts/Player/PlayerController.cs)
+
   ## Updates
 
   ### 0.1:
@@ -74,6 +79,8 @@ to increase difficulty.
  
   ### 0.4: (IN PROGRESS)
   - Fix for spawn interval multiplier not increasing
+  - Redid chance system and tided up multipliers
+  - Disabled multi lane activation (Was too difficult and not fun)
   - Created Main Menu
   - Implementing Toxic fish
   
