@@ -3,6 +3,22 @@
 Hello! Welcome to the repository of my tiny mobile game. This is a personal project and must be noted that **This only works on mobiles at the moment, controls will not work on PC**. 
 This will be changed in the future as im planning an overhaul to the control system.
 
+## Downloads
+
+The most up to date builds aswell as the source code can be found here: https://github.com/CKirkby/Shark-Bait/releases/tag/Downloads
+
+## Installation
+
+**Note:** The build of this game can **Only be played on Andriod**. 
+
+1. Download the APK from either your pc or your phone.
+   * If pc, you need to transfer it to your phone through a file transfer
+   * If phone, it will download to your files.
+2. Once on your phone, open the files and tap the APK. It will begin installation. (Note: Your phone may fight back against this as antivirus' do not like apps that are not from the app store, it will most likely be a 'are you sure you want to install this' kind of thing)
+3. Wait for it to install, it will appear as a normal app like any other.
+4. Click on it to open
+5. Enjoy! 
+
 ## What is this?
 
 Shark bait is a small personal project that I made mainly to futher test my abilities to develop a game on mobile as well as have some fun. The game was heavily inspired by the fishing minigame from the Jak and Daxter precursor legacy game.
