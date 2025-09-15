@@ -1,7 +1,23 @@
 # Shark bait <h6> (Current Version 0.3)
 
-Hello! Welcome to the repository of my tiny mobile game. This is a personal project and must be noted that **This only works on mobiles at the moment, controls will not work on PC**. 
-This will be changed in the future as im planning an overhaul to the control system.
+Hello! Welcome to the repository of my tiny mobile game. This is a personal project and must be noted that **This only works on android at the moment, controls will not work on PC**. 
+This will be changed in the future as im planning an overhaul to the control system. This game was built using Unity 6.2.
+
+## Downloads
+
+The most up to date builds aswell as the source code can be found here: https://github.com/CKirkby/Shark-Bait/releases/tag/Downloads
+
+## Installation
+
+**Note:** The build of this game can **Only be played on Android**. 
+
+1. Download the APK from either your pc or your phone.
+   * If pc, you need to transfer it to your phone through a file transfer
+   * If phone, it will download to your files.
+2. Once on your phone, open the files and tap the APK. It will begin installation. (Note: Your phone may fight back against this as antivirus' do not like apps that are not from the app store, it will most likely be a 'are you sure you want to install this' kind of thing)
+3. Wait for it to install, it will appear as a normal app like any other.
+4. Click on it to open
+5. Enjoy! 
 
 ## What is this?
 
@@ -33,10 +49,9 @@ to increase difficulty.
   The turtle is too hard to eat, it will hurt the player if they try and will cost the player a life
 
 - Toxic Fish
-  
-  (Not Implemented Yet)
-  
-  This fish is poisonous and if the player eats this, it will spoil some of the catch, the player will lose points if they eat this.
+
+  <img src="https://github.com/CKirkby/Shark-Bait/blob/main/Shark%20Bait/Assets/Art/Eel_ly_guy%20(1).png" width="100" height="100">
+  This fish is poisonous and if the player eats this, it will spoil some of the catch, the player will lose 100 points if they eat this.
 
   ## Controls
   <- / -> Movement:
@@ -77,11 +92,13 @@ to increase difficulty.
   - Created adaptive difficulty settings (Spawn interval and speed increase the more score you have)
   - Created a new lane system (When the player reaches score thresholds the spawner will start using more then one lane)
  
-  ### 0.4: (IN PROGRESS)
+  ### 0.4:
   - Fix for spawn interval multiplier not increasing
   - Redid chance system and tided up multipliers
   - Disabled multi lane activation (Was too difficult and not fun)
   - Game over Menu
   - Implemented Toxic fish
   - Implemented simple high score system
+ 
+  ### 0.5: (In Progress)
   
