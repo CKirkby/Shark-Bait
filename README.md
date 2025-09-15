@@ -79,6 +79,8 @@ to increase difficulty.
  
   ### 0.4: (IN PROGRESS)
   - Fix for spawn interval multiplier not increasing
+  - Redid chance system and tided up multipliers
+  - Disabled multi lane activation (Was too difficult and not fun)
   - Created Main Menu
   - Implementing Toxic fish
   
