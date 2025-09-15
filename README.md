@@ -49,10 +49,9 @@ to increase difficulty.
   The turtle is too hard to eat, it will hurt the player if they try and will cost the player a life
 
 - Toxic Fish
-  
-  (Not Implemented Yet)
-  
-  This fish is poisonous and if the player eats this, it will spoil some of the catch, the player will lose points if they eat this.
+
+  <img src="https://github.com/CKirkby/Shark-Bait/blob/main/Shark%20Bait/Assets/Art/Eel_ly_guy%20(1).png" width="100" height="100">
+  This fish is poisonous and if the player eats this, it will spoil some of the catch, the player will lose 100 points if they eat this.
 
   ## Controls
   <- / -> Movement:
