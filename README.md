@@ -1,7 +1,7 @@
 # Shark bait <h6> (Current Version 0.3)
 
-Hello! Welcome to the repository of my tiny mobile game. This is a personal project and must be noted that **This only works on mobiles at the moment, controls will not work on PC**. 
-This will be changed in the future as im planning an overhaul to the control system.
+Hello! Welcome to the repository of my tiny mobile game. This is a personal project and must be noted that **This only works on android at the moment, controls will not work on PC**. 
+This will be changed in the future as im planning an overhaul to the control system. This game was built using Unity 6.2.
 
 ## Downloads
 
@@ -9,7 +9,7 @@ The most up to date builds aswell as the source code can be found here: https://
 
 ## Installation
 
-**Note:** The build of this game can **Only be played on Andriod**. 
+**Note:** The build of this game can **Only be played on Android**. 
 
 1. Download the APK from either your pc or your phone.
    * If pc, you need to transfer it to your phone through a file transfer
