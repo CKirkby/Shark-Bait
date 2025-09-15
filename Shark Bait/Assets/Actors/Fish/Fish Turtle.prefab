@@ -202,5 +202,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f5ab5661f9792740a5e56bdc95b69c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FishConfiguration
-  FishType: 2
-  FishValue: -10
+  FishType: 3
+  FishValue: 0

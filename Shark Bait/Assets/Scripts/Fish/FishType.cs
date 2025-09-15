@@ -2,5 +2,6 @@ public enum FishType
 {
     Small,
     Big, 
-    Toxic
+    Toxic,
+    Turtle,
 }

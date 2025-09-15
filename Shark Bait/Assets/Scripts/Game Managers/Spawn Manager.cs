@@ -9,6 +9,7 @@ public class SpawnManager : MonoBehaviour
     [Header("Spawn Classes")]
     public GameObject SmallFishSpawnClass;
     public GameObject BigFishSpawnClass;
+    public GameObject TurtleFishSpawnClass;
     public GameObject ToxicFishSpawnClass;
 
     [Header("Spline Settings")] 
@@ -17,14 +18,17 @@ public class SpawnManager : MonoBehaviour
 
     [Header("Spawn Settings")] 
     public float SpawnInterval;
-    public float ChanceToSpawnSmallFish = 0.5f;
-    public float ChanceToSpawnToxicFish = 0.8f;
+    [Range(0f, 100f)] public float ChanceToSpawnSmallFish = 50f;
+    [Range(0f, 100f)] public float ChanceToSpawnTurtleFish = 30f;
+    [Range(0f, 100f)] public float ChanceToSpawnBigFish = 15f;
+    [Range(0f, 100f)] public float ChanceToSpawnToxicFish = 5f;
     
     [Header("Object Pool Settings")]
     public GameObject ObjectPoolSpawnPoint;
     public int SmallFishPoolSize = 15;
     public int BigFishPoolSize = 5;
-    public int ToxicFishPoolSize = 10;
+    public int TurtleFishPoolSize = 10;
+    public int ToxicFishPoolSize = 5;
     
     [Header("Multiplier Settings")]
     private float SpawnIntervalMultiplier = 1.0f;
@@ -75,7 +79,6 @@ public class SpawnManager : MonoBehaviour
             }
             else
             {
-                
                 // Gets a single spline game object
                 SplineContainer LaneToUse = Lanes[Random.Range(0, Lanes.Length)];
 
@@ -115,9 +118,14 @@ public class SpawnManager : MonoBehaviour
             HandleSpawnFish(BigFishSpawnClass, FishType.Big);
         }
 
+        for (int i = 0; i < TurtleFishPoolSize; i++)
+        {
+            HandleSpawnFish(TurtleFishSpawnClass,  FishType.Turtle);
+        }
+
         for (int i = 0; i < ToxicFishPoolSize; i++)
         {
-            HandleSpawnFish(ToxicFishSpawnClass,  FishType.Toxic);
+            HandleSpawnFish(ToxicFishSpawnClass, FishType.Toxic);
         }
     }
 
@@ -164,20 +172,28 @@ public class SpawnManager : MonoBehaviour
 
     GameObject ChooseFishToActivate()
     {
-        // Random Num between 0 and 1 to act as chance value
-        float RandomValue = Random.value;
+        // Gets the total percentage chances
+        float TotalWeight = ChanceToSpawnSmallFish +  ChanceToSpawnTurtleFish + ChanceToSpawnBigFish +  ChanceToSpawnToxicFish;
+        
+        // Acts like a raffle system, each fish has a value, if it doesn't hit that value, it will take away to select from the remaining chances
+        float RandomChanceValue = Random.Range(0f, TotalWeight);
         
         // Small Fish Chance
-        if (RandomValue < ChanceToSpawnSmallFish)
+        if (RandomChanceValue < ChanceToSpawnSmallFish)
             return GetPooledFish(FishType.Small);
+        RandomChanceValue -= ChanceToSpawnSmallFish;
+        
+        // Turtle Fish Chance
+        if (RandomChanceValue < ChanceToSpawnTurtleFish)
+            return GetPooledFish(FishType.Turtle);
+        RandomChanceValue -= ChanceToSpawnTurtleFish;
+        
+        // Big fish chance
+        if (RandomChanceValue < ChanceToSpawnBigFish)
+            return GetPooledFish(FishType.Big);
         
         // Toxic Fish Chance
-        if (RandomValue < ChanceToSpawnToxicFish)
             return GetPooledFish(FishType.Toxic);
-        
-        // Big Fish Chance
-            return GetPooledFish(FishType.Big);
-
     }
 
     public void SetSpeedMultiplier(float speedMultiplier)
@@ -198,8 +214,6 @@ public class SpawnManager : MonoBehaviour
         SpawnIntervalMultiplier = spawnIntervalMultiplier;
         
         CachedUpdatedSpawnInterval = SpawnInterval / SpawnIntervalMultiplier;
-        
-        Debug.Log("New Spawn Multiplier is: " +  CachedUpdatedSpawnInterval);
     }
 
     public void SetActiveLanes(int activeLanes)

@@ -54,14 +54,18 @@ public class CollisionProfile : MonoBehaviour
                             
                             break;
                         
-                        case FishType.Toxic:
-                            
+                        case FishType.Turtle:
                             ScoreManager.AddScore(IncomingFishConfig.GetFishValue());
-
+                            
                             if (HealthController)
                             {
                                 HealthController.TakeDamage(1);
                             }
+                            break;
+                        
+                        case FishType.Toxic:
+                            
+                            ScoreManager.AddScore(IncomingFishConfig.GetFishValue());
                             
                             break;
                         

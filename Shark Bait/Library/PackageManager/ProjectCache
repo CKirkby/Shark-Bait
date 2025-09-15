@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638928022730776431
-    m_Hash: 3424762330
+      ticks: 638934836995400272
+    m_Hash: 4095768566
   m_LockFileStatus:
     m_FilePath: Z:/Repository/Unity/Shark-Bait/Shark Bait/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638928022730798952
-    m_Hash: 3734342664
+      ticks: 638934836995410495
+    m_Hash: 622422042
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -722,9 +722,11 @@ m_ResolvedPackages:
     - 3.0.34
     - 3.0.35
     - 3.0.36
+    - 3.0.37
     compatible:
     - 3.0.36
-    recommended: 3.0.36
+    - 3.0.37
+    recommended: 3.0.37
     deprecated: []
   dependencies:
   - name: com.unity.ext.nunit
@@ -5882,9 +5884,11 @@ m_ResolvedPackages:
     - 5.0.2
     - 5.0.3
     - 5.1.0
+    - 5.1.1
     compatible:
     - 5.1.0
-    recommended: 5.1.0
+    - 5.1.1
+    recommended: 5.1.1
     deprecated: []
   dependencies:
   - name: com.unity.modules.imgui

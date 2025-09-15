@@ -950,18 +950,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpawnManager
   SmallFishSpawnClass: {fileID: 4796405877543352532, guid: ea69b8836b26b4f41b354a59e532fe4d, type: 3}
   BigFishSpawnClass: {fileID: 4796405877543352532, guid: 3e8f18e543673a0478090251682cd3b2, type: 3}
-  ToxicFishSpawnClass: {fileID: 4796405877543352532, guid: 4193087b92d8cfe4580a679f10ed5f62, type: 3}
+  TurtleFishSpawnClass: {fileID: 4796405877543352532, guid: 4193087b92d8cfe4580a679f10ed5f62, type: 3}
+  ToxicFishSpawnClass: {fileID: 4796405877543352532, guid: 73169a70397f5604884c190af655e4e6, type: 3}
   Lanes:
   - {fileID: 1158648220}
   - {fileID: 617262247}
   - {fileID: 870989132}
   BaseSpeed: 5
   SpawnInterval: 2
-  ChanceToSpawnSmallFish: 0.65
-  ChanceToSpawnToxicFish: 0.8
+  ChanceToSpawnSmallFish: 60
+  ChanceToSpawnTurtleFish: 30
+  ChanceToSpawnBigFish: 20
+  ChanceToSpawnToxicFish: 10
   ObjectPoolSpawnPoint: {fileID: 82878021}
   SmallFishPoolSize: 10
-  BigFishPoolSize: 5
+  BigFishPoolSize: 10
+  TurtleFishPoolSize: 10
   ToxicFishPoolSize: 10
 --- !u!114 &1006581932
 MonoBehaviour:
@@ -1004,8 +1008,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DifficultyController
   SpawnManager: {fileID: 1006581931}
   MaxScoreInterval: 200
-  SpeedMaxMultiplier: 3
-  SpawnIntervalMaxMultiplier: 4
+  SpeedMaxMultiplier: 2.5
+  SpawnIntervalMaxMultiplier: 5.5
   LaneActivationGates:
   - 2
   - 2
