@@ -20,4 +20,9 @@ public class ScoreManager : MonoBehaviour
        
        ScoreUI.text = CurrentScore.ToString();
     }
+
+    public int GetCurrentScore()
+    {
+        return CurrentScore;
+    }
 }

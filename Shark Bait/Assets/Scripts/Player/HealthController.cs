@@ -7,6 +7,7 @@ public class HealthController : MonoBehaviour
     [Header("Health Settings")]
     private int CurrentHealth;
     [SerializeField] private int MaxHealth;
+    [SerializeField] private GameModeController GameModeController;
     
     [Header("Health UI Settings")]
     [SerializeField] private Image[] HealthHearts;
@@ -40,7 +41,11 @@ public class HealthController : MonoBehaviour
 
     private void GameOver()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        // Tells the game mode to begin the game over a sequence.
+        if (GameModeController)
+        {
+            GameModeController.StartGameOver();
+        }
     }
 
     private void UpdateUIHealth(int NowHealth)

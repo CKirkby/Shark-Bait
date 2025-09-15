@@ -18,6 +18,7 @@ public class SpawnManager : MonoBehaviour
 
     [Header("Spawn Settings")] 
     public float SpawnInterval;
+    private bool SpawnerActive = true;
     [Range(0f, 100f)] public float ChanceToSpawnSmallFish = 50f;
     [Range(0f, 100f)] public float ChanceToSpawnTurtleFish = 30f;
     [Range(0f, 100f)] public float ChanceToSpawnBigFish = 15f;
@@ -53,6 +54,12 @@ public class SpawnManager : MonoBehaviour
     {
         while (true)
         {
+            if (!SpawnerActive)
+            {
+                StopCoroutine(ActivateEntity());
+                yield break;
+            }
+            
             if (Lanes.Length == 0) yield break;
         
             yield return new WaitForSeconds(CachedUpdatedSpawnInterval);
@@ -99,6 +106,12 @@ public class SpawnManager : MonoBehaviour
         
         // Sets the new speed of the fish when its in use, should be equal across all fish
         SplineAnim.MaxSpeed = CachedModifiedSpeed;
+
+        if (!SpawnerActive)
+        {
+            SetFishInactive(GotFish);
+            return;
+        }
 
         // Sets the anims spline to be the chosen lane and plays it.
         SplineAnim.Container = Lane;
@@ -240,6 +253,35 @@ public class SpawnManager : MonoBehaviour
         
         
         GetFishAndUpdateSplines(Lane);
+    }
+
+    public void EndGameSystems()
+    {
+        // Turns off the spawner and then also removes all fish from active, ending the game
+        SpawnerActive = false;
+
+        foreach (var SpawnedFish in SpawnedFishes)
+        {
+            GameObject GotFish = SpawnedFish.Key;
+            SetFishInactive(GotFish);
+        }
+    }
+    
+    private void SetFishInactive(GameObject CollidedFish)
+    {
+        // Sets the missed fish inactive
+        CollidedFish.SetActive(false);
+
+        // Sets the position back to the object pool point
+        if (ObjectPoolSpawnPoint)
+        {
+            CollidedFish.transform.position = ObjectPoolSpawnPoint.transform.position;
+        }
+        else
+        {
+            // If for whatever reason the object pool point isn't active, sets it manually
+            CollidedFish.transform.position = new Vector2(0, 15);
+        }
     }
     
 }
