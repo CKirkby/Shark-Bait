@@ -77,11 +77,13 @@ to increase difficulty.
   - Created adaptive difficulty settings (Spawn interval and speed increase the more score you have)
   - Created a new lane system (When the player reaches score thresholds the spawner will start using more then one lane)
  
-  ### 0.4: (IN PROGRESS)
+  ### 0.4:
   - Fix for spawn interval multiplier not increasing
   - Redid chance system and tided up multipliers
   - Disabled multi lane activation (Was too difficult and not fun)
   - Game over Menu
   - Implemented Toxic fish
   - Implemented simple high score system
+ 
+  ### 0.5: (In Progress)
   
