@@ -1,4 +1,4 @@
-# Shark bait <h6> (Current Version 0.3)
+# Shark bait <h6> (Current Version 0.4)
 
 Hello! Welcome to the repository of my tiny mobile game. This is a personal project and must be noted that **This only works on android at the moment, controls will not work on PC**. 
 This will be changed in the future as im planning an overhaul to the control system. This game was built using Unity 6.2.
