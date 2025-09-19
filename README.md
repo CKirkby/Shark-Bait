@@ -16,7 +16,7 @@ The most up to date builds aswell as the source code can be found here: https://
    * If phone, it will download to your files.
 2. Once on your phone, open the files and tap the APK. It will begin installation. (Note: Your phone may fight back against this as antivirus' do not like apps that are not from the app store, it will most likely be a 'are you sure you want to install this' kind of thing)
 3. Wait for it to install, it will appear as a normal app like any other.
-4. Click on it to open
+4. Click on it to open.
 5. Enjoy! 
 
 ## What is this?
